@@ -2,7 +2,7 @@
 A structured set of pulumi monorepo that follows the various cloud certification objectives.
 
 ### The goal
-To have a single mono-repo that is split by cloud provider and their respective certification paths from [Microsoft Learn](https://learn.microsoft.com/en-us/training/), [AWS Training and Certification](https://aws.amazon.com/training/), and [Google Cloud Training](https://cloud.google.com/training) and container technologies such as Docker and Kubernetes.
+To have a single mono-repo that is split by cloud provider and their respective certification paths from [Microsoft Learn](https://learn.microsoft.com/en-us/training/), [AWS Training and Certification](https://aws.amazon.com/training/), and [Google Cloud Training](https://cloud.google.com/training) and container technologies such as Docker and Kubernetes as well as some common devops tools like Packer, Vagrant, and consul and more.
 
 This will allow for a structured approach to learning cloud technologies and provide a way to deploy resources in a consistent manner.
 
@@ -34,10 +34,15 @@ cloud-labs
 │   ├───gcp-pca
 │   ├───gcp-pca
 ---docker
+|  ├─── README.md
 ---kubernetes
-|
-|
-|
+|  ├─── README.md
+---consul
+|  ├─── README.md
+---packer
+|  ├─── README.md
+---vagrant
+|  ├─── README.md
 --- README.md
 ```
 
