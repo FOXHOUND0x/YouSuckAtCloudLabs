@@ -1,11 +1,11 @@
 cloud-architecture-diagram
 
 Title Azure Resource Groups
+
 colorMode bold
 styleMode watercolor
 typeface mono
 direction down
-
 
 Pulumi [icon: pulumi]
 Resource-Manager [icon: package]
@@ -14,12 +14,12 @@ Resource-Provider [icon: gear]
 Pulumi <> Resource-Manager <> 
 Resource-Provider
 
-Resource-Provider <> Resource-Group
-
-Azure-Subscription [icon: azure-subscriptions] {
+Azure-Sub [icon: azure-subscriptions] {
   Resource-Group [icon: azure-resource-groups] {
     VM [icon: server]
     StorageAccount [icon: azure-storage-accounts] 
   }
 }
+
+Resource-Provider <> Resource-Group
 
