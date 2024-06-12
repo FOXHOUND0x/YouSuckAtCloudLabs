@@ -67,7 +67,7 @@ Pulumi needs the Azure credentials to deploy resources. Configure Pulumi to use 
    To ensure Pulumi can authenticate with Azure, create a new Pulumi project or use an existing one and perform a preview.
 
 ```sh
-pulumi new azure-csharp  # for new project, choose your preferred template
+pulumi new azure-go  # for new project, choose your preferred template
 pulumi up --preview      # for preview of existing project
 ```
 
