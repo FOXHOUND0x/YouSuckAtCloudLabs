@@ -22,7 +22,7 @@ After you have verified the deployment, remove the resources by running `pulumi 
 <!-- eraser-additional-content -->
 ## Diagrams
 <!-- eraser-additional-files -->
-<a href="/cloud-labs/azure/az-104/resource-groups/README-cloud-architecture-1.eraserdiagram" data-element-id="OxPq-v9mpA5rP3CcUJb6j"><img src="/.eraser/4CHajTgt47nW2K68pjPj___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----93f23356fb982aab692082d7e20ade43.png" alt="" data-element-id="OxPq-v9mpA5rP3CcUJb6j" /></a>
+<a href="/cloud-labs/azure/az-104/resource-groups/README-cloud-architecture-1.eraserdiagram" data-element-id="OxPq-v9mpA5rP3CcUJb6j"><img src="/.eraser/4CHajTgt47nW2K68pjPj___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----0b0e86a973c74ede5f994af00ed1a35e.png" alt="" data-element-id="OxPq-v9mpA5rP3CcUJb6j" /></a>
 <!-- end-eraser-additional-files -->
 <!-- end-eraser-additional-content -->
 <!--- Eraser file: https://app.eraser.io/workspace/4CHajTgt47nW2K68pjPj --->

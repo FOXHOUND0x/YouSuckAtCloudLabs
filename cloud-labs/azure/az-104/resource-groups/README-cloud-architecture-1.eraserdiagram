@@ -4,6 +4,7 @@ Title Azure Resource Groups
 colorMode bold
 styleMode watercolor
 typeface mono
+direction down
 
 
 Pulumi [icon: pulumi]
