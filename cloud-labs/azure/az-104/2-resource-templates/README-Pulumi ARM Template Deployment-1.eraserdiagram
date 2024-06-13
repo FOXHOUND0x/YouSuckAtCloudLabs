@@ -1,0 +1,33 @@
+flowchart-diagram
+
+title Pulumi ARM Template Deployment
+
+direction right
+
+// Nodes and groups
+Start [shape: oval, icon: play-circle]
+
+PulumiDeployment [color: blue] {
+  Initialize Pulumi [icon: terminal, color: blue]
+  Configure Azure Provider [icon: azure, color: blue]
+  Define Resource Group [icon: folder, color: blue]
+  Define ARM Template [icon: file-text, color: blue]
+  Set Parameters [icon: settings, color: blue]
+  Deploy Template [icon: upload, color: blue]
+}
+
+ResourceGroup [color: green] {
+  The0xResourceGroup [icon: folder, color: green]
+  The0xDemoDeployment [icon: database, color: green]
+}
+
+// Relationships
+Developer > Initialize Pulumi
+Initialize Pulumi > Configure Azure Provider
+Configure Azure Provider > Define Resource Group
+Define Resource Group > Define ARM Template
+Define ARM Template > Set Parameters
+Set Parameters > Deploy Template
+Deploy Template > The0xResourceGroup
+The0xResourceGroup > The0xDemoDeployment
+
