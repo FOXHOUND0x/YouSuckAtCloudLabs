@@ -14,29 +14,31 @@ func main() {
 			return err
 		}
 
-		example, err := core.NewResourceGroup(ctx, "example", &core.ResourceGroupArgs{
-			Name:     pulumi.String("example-resources"),
-			Location: pulumi.String("West Europe"),
+		example, err := core.NewResourceGroup(ctx, "The0xResourceGroup", &core.ResourceGroupArgs{
+			Name:     pulumi.String("The0xResourceGroup"),
+			Location: pulumi.String("East US"),
 		})
 		if err != nil {
 			return err
 		}
 
-		_, err = core.NewTemplateDeployment(ctx, "exampleDeployment", &core.TemplateDeploymentArgs{
-			Name:              pulumi.String("exampleDeployment"),
+		// Template deploymnts are going to be deprecated in v4 of the ARM provider.
+		// In the future, we will have to use management.NewGroupTemplateDeployment
+
+		_, err = core.NewTemplateDeployment(ctx, "The", &core.TemplateDeploymentArgs{
+			Name:              pulumi.String("The0xDemoDeployment"),
 			ResourceGroupName: example.Name,
 			DeploymentMode:    pulumi.String("Incremental"),
 			TemplateBody:      pulumi.String(template),
-			Parameters:        pulumi.StringMap{
-				"storageAccountType": pulumi.String("Standard_LRS"),
-				"storageAccountName": pulumi.String("mystorageaccount"),
-				"location":           pulumi.String("US West"),
+			Parameters: pulumi.StringMap{
+				"storageAccountName": pulumi.String("the0xsa"),
+				"location":           pulumi.String("eastus"),
+				"resourceGroup":      example.Name,
 			},
 		})
 		if err != nil {
 			return err
 		}
-	
 
 		return nil
 	})
