@@ -9,14 +9,13 @@ In this lab you will learn about Azure Resource Manager (ARM) templates. ARM tem
 ---
 
 ## How to deploy Azure Resource Manager Templates using Pulumi
-In this lab, you will deploy a simple Azure Resource Manager (ARM) template using pulumi. The ARM template is defined in the `main.bicep` file. The template will deploy a resource group and a storage account. The storage account is tied to the resource group.
+In this lab, you will deploy a simple Azure Resource Manager (ARM) template using pulumi. The ARM template is defined in the `lab-template.json` file. The template will deploy a resource group and a storage account. The storage account is tied to the resource group.
 
 ## Goal
 The goal is to understand the core components that make up an ARM template and how to deploy the template using pulumi.
 
 ## Cleanup
 After you have verified the deployment, remove the resources by running `pulumi destroy` and then `pulumi stack rm dev` to remove the stack.
-
 
 <!-- eraser-additional-content -->
 ## Diagrams
