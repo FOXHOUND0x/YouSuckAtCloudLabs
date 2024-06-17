@@ -39,7 +39,6 @@ func main() {
 				return accountKeys.Keys[0].Value, nil
 			},
 		))
-
 		return nil
 	})
 }

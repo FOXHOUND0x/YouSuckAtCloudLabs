@@ -1,0 +1,7 @@
+name: 3-subscriptions
+runtime: go
+description: A lab to demo the deployment of subscriptions
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: azure-go
