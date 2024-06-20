@@ -25,7 +25,7 @@ func main() {
 
 		account, err := storage.NewStorageAccount(ctx, "sa", &storage.StorageAccountArgs{
 			ResourceGroupName: resourceGroup.Name,
-			Tags:              tags,
+			Tags:              pulumi.StringMap{"FooTags": pulumi.String("true")},
 			Sku: &storage.SkuArgs{
 				Name: pulumi.String("Standard_LRS"),
 			},
