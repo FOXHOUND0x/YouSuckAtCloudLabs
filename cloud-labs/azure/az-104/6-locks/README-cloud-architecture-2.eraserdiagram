@@ -1,0 +1,11 @@
+cloud-architecture-diagram
+
+The0xTenant [icon: aws-organizations] {
+  The0xSub [icon: azure-subscriptions] {
+    The0xRG {
+      RGLock [icon: lock] 
+      Server [icon: server]
+      ServiceAccount [icon: storage]
+    }
+  }
+}
