@@ -14,7 +14,7 @@ You will need to use the console in this lab to create the two tenants due to te
 
 
 <!-- eraser-additional-content -->
-## Diagrams
+#### Diagrams
 <!-- eraser-additional-files -->
 <a href="/cloud-labs/azure/az-104/8-multi-tenant-architectures/README-Azure Base Single Tenant-1.eraserdiagram" data-element-id="UbLYukGnM-Op879czTP0Q"><img src="/.eraser/EYOcYAdp3GyRFsiYJ0o5___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----2b74cce34cd8046e7e77b20ec0424828-Azure-Base-Single-Tenant.png" alt="" data-element-id="UbLYukGnM-Op879czTP0Q" /></a>
 <a href="/cloud-labs/azure/az-104/8-multi-tenant-architectures/README-Azure Base MTA-2.eraserdiagram" data-element-id="uUG6rV7f-O8_hREL1Xqpa"><img src="/.eraser/EYOcYAdp3GyRFsiYJ0o5___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----2c5f948c7fa6627bc18ab4c9c1a2ca69-Azure-Base-MTA.png" alt="" data-element-id="uUG6rV7f-O8_hREL1Xqpa" /></a>
