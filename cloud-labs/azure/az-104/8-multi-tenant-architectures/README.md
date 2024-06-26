@@ -10,7 +10,7 @@ Reference Documentation:
 ## Limitation
 You will need to use the console in this lab to create the two tenants due to terms and conditions of the microsoft entra admin center. For me I just set up trials and used the console to create the two tenants `the0x1.app.dev` and `the0x2.app.dev` 
 
-## NOTE: The normal azure portal does not allow you to create tenants, but if you navigate to the new entra admin center, you can create tenants there. [﻿Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/DirectorySwitchBlade/subtitle/) 
+#### NOTE: The normal azure portal does not allow you to create tenants, but if you navigate to the new entra admin center, you can create tenants there. [﻿Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/DirectorySwitchBlade/subtitle/) 
 
 
 <!-- eraser-additional-content -->
