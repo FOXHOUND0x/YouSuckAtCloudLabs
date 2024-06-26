@@ -1,0 +1,11 @@
+cloud-architecture-diagram
+
+// Title
+title Azure Base Single Tenant
+
+// Nodes and groups
+Azure Tenant [icon: azure-active-directory] {
+  Security Subscription [icon: azure-subscription]
+  Accounting Subscription [icon: azure-subscription]
+}
+

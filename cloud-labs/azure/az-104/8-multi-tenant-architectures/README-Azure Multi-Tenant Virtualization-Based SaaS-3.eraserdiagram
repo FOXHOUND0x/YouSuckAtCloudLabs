@@ -1,0 +1,35 @@
+cloud-architecture-diagram
+
+// Title
+title Azure Multi-Tenant Virtualization-Based SaaS
+
+// Nodes and Groups
+Tenant 1 [color: blue, icon: user] {
+  Tenant 1 Web App [icon: azure-app-service]
+  Tenant 1 Database [icon: azure-sql-database]
+}
+
+Tenant 2 [color: green, icon: user] {
+  Tenant 2 Web App [icon: azure-app-service]
+  Tenant 2 Database [icon: azure-sql-database]
+}
+
+Shared Services [color: gray, icon: cloud] {
+  Load Balancer [icon: azure-load-balancer] // entry point
+  API Gateway [icon: azure-api-management] // entry point
+  Authentication Service [icon: azure-active-directory]
+  Monitoring Service [icon: azure-monitor]
+  Backup Service [icon: azure-backup]
+}
+
+// Connections
+Tenant 1 Web App > API Gateway
+Tenant 2 Web App > API Gateway
+API Gateway > Tenant 1 Database
+API Gateway > Tenant 2 Database
+API Gateway > Authentication Service
+API Gateway > Monitoring Service
+API Gateway > Backup Service
+Load Balancer > Tenant 1 Web App
+Load Balancer > Tenant 2 Web App
+
