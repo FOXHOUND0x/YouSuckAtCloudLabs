@@ -9,11 +9,13 @@ Reference Documentation:
 
 - [﻿Azure SaaS Architecture Models](https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/multi-tenant-saas-architecture) 
 
+
+
 <!-- eraser-additional-content -->
 ## Diagrams
 <!-- eraser-additional-files -->
-<a href="/cloud-labs/azure/az-104/9-users-groups/README-Managing User Flow Entra-ID-1.eraserdiagram" data-element-id="CZsjZK21PGMCD3jwjqDgF"><img src="/.eraser/K5FzVPtJKfp1JRe7Qytm___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----80b94ed8ff5409c268c5da90cec7b9c1-Managing-User-Flow-Entra-ID.png" alt="" data-element-id="CZsjZK21PGMCD3jwjqDgF" /></a>
-<a href="/cloud-labs/azure/az-104/9-users-groups/README-entity-relationship-2.eraserdiagram" data-element-id="_mXO17SlB44LZRUgtfvRv"><img src="/.eraser/K5FzVPtJKfp1JRe7Qytm___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----3a87784f8eb6bc27af95b05d62eed6ab.png" alt="" data-element-id="_mXO17SlB44LZRUgtfvRv" /></a>
+<a href="/cloud-labs/azure/az-104/9-users-groups/README-entity-relationship-1.eraserdiagram" data-element-id="_mXO17SlB44LZRUgtfvRv"><img src="/.eraser/K5FzVPtJKfp1JRe7Qytm___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----3a87784f8eb6bc27af95b05d62eed6ab.png" alt="" data-element-id="_mXO17SlB44LZRUgtfvRv" /></a>
+<a href="/cloud-labs/azure/az-104/9-users-groups/README-Managing User Flow Entra-ID-2.eraserdiagram" data-element-id="CZsjZK21PGMCD3jwjqDgF"><img src="/.eraser/K5FzVPtJKfp1JRe7Qytm___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----80b94ed8ff5409c268c5da90cec7b9c1-Managing-User-Flow-Entra-ID.png" alt="" data-element-id="CZsjZK21PGMCD3jwjqDgF" /></a>
 <!-- end-eraser-additional-files -->
 <!-- end-eraser-additional-content -->
 <!--- Eraser file: https://app.eraser.io/workspace/K5FzVPtJKfp1JRe7Qytm --->
