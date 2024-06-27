@@ -1,0 +1,16 @@
+cloud-architecture-diagram
+
+title Managing User Flow Entra-ID
+colorMode bold
+styleMode watercolor
+typeface clean
+
+Administrators [icon: user, color: Green]
+Members [icon: users, color: Blue]
+Externals [icon: users, color: Red]
+Entra [icon: microsoft-entra]
+
+
+Administrators --> Entra
+Members --> Entra
+Externals --> Entra
