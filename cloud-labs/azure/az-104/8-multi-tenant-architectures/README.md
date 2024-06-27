@@ -12,7 +12,6 @@ You will need to use the console in this lab to create the two tenants due to te
 
 #### NOTE: The normal azure portal does not allow you to create tenants, but if you navigate to the new entra admin center, you can create tenants there. [﻿Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/DirectorySwitchBlade/subtitle/) 
 
-
 <!-- eraser-additional-content -->
 #### Diagrams
 <!-- eraser-additional-files -->
