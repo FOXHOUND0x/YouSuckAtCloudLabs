@@ -4,7 +4,7 @@
 In this lab you will learn about Azure Resource Manager (ARM) templates. ARM templates are JSON or Bicep files that define the resources to be deployed in Azure. The templates are used to automate the deployment of resources in Azure. The templates can be used to deploy resources in a consistent manner and can be used to deploy resources across different environments.
 
 ## Reference Documentation:
-- [﻿Azure Resource Manager Overview](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview) 
+- [﻿Azure Resource Manager Overview](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview)  
 - [﻿The 0x - AZ-104 Guide - ARM Templates](https://publish.obsidian.md/ysac/Azure/AZ-104/Azure+Resource+Manager/Azure+-+Resource+Templates) 
 ---
 
@@ -17,10 +17,11 @@ The goal is to understand the core components that make up an ARM template and h
 ## Cleanup
 After you have verified the deployment, remove the resources by running `pulumi destroy` and then `pulumi stack rm dev` to remove the stack.
 
+
 <!-- eraser-additional-content -->
 ## Diagrams
 <!-- eraser-additional-files -->
-<a href="/cloud-labs/azure/az-104/2-resource-templates/README-Pulumi ARM Template Deployment-1.eraserdiagram" data-element-id="Y-ccqZk8u0hlz_N54nM-k"><img src="/.eraser/vPgIhCxAf8VjvS2FTV5I___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----d8229c1280d982eaf2f5b7730aa5c4df-Pulumi-ARM-Template-Deployment.png" alt="" data-element-id="Y-ccqZk8u0hlz_N54nM-k" /></a>
+<a href="/cloud-labs/azure/az-104/2-resource-templates/README-Pulumi ARM Template Deployment-1.eraserdiagram" data-element-id="Y-ccqZk8u0hlz_N54nM-k"><img src="/.eraser/vPgIhCxAf8VjvS2FTV5I___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----fc7f0979b2c2b915a6837b62108f14cf-Pulumi-ARM-Template-Deployment.png" alt="" data-element-id="Y-ccqZk8u0hlz_N54nM-k" /></a>
 <!-- end-eraser-additional-files -->
 <!-- end-eraser-additional-content -->
 <!--- Eraser file: https://app.eraser.io/workspace/vPgIhCxAf8VjvS2FTV5I --->

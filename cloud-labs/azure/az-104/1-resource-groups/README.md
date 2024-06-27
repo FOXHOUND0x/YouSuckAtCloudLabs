@@ -1,11 +1,11 @@
-<p><a target="_blank" href="https://app.eraser.io/workspace/4CHajTgt47nW2K68pjPj" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
+<p><a target="_blank" href="https://app.eraser.io/workspace/HWP4VkuWLwXtkhbP1iIZ" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
 
 # Understand Azure Resource Groups
 In this lab, you will read and learn about Azure Resource Groups.
 
 Reference Documentation:
 
-- [﻿Azure Resource Manager Overview](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview) 
+- [﻿Azure Resource Manager Overview](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview)  
 - [﻿The 0x - AZ-104 Guide](https://publish.obsidian.md/ysac/Azure/AZ-104/AZ-104) 
 ---
 
@@ -22,7 +22,7 @@ After you have verified the deployment, remove the resources by running `pulumi 
 <!-- eraser-additional-content -->
 ## Diagrams
 <!-- eraser-additional-files -->
-<a href="/cloud-labs/azure/az-104/resource-groups/README-cloud-architecture-1.eraserdiagram" data-element-id="OxPq-v9mpA5rP3CcUJb6j"><img src="/.eraser/4CHajTgt47nW2K68pjPj___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----a96c2ce362dea3d11d8a4d2d221dc0a2.png" alt="" data-element-id="OxPq-v9mpA5rP3CcUJb6j" /></a>
+<a href="/cloud-labs/azure/az-104/1-resource-groups/README-Azure Resource Groups-1.eraserdiagram" data-element-id="gFdLF6vwTYrvo3MCfJeOk"><img src="/.eraser/HWP4VkuWLwXtkhbP1iIZ___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----2c52e08b05498598768b64dd9cae7a6b-Azure-Resource-Groups.png" alt="" data-element-id="gFdLF6vwTYrvo3MCfJeOk" /></a>
 <!-- end-eraser-additional-files -->
 <!-- end-eraser-additional-content -->
-<!--- Eraser file: https://app.eraser.io/workspace/4CHajTgt47nW2K68pjPj --->
+<!--- Eraser file: https://app.eraser.io/workspace/HWP4VkuWLwXtkhbP1iIZ --->

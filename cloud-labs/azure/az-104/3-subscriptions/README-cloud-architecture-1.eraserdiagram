@@ -1,0 +1,27 @@
+cloud-architecture-diagram
+
+Title Azure Organizational Hierachy
+Direction down
+
+The0xTenant [icon: azure-tenant-properties] {
+  Security [icon: azure-subscriptions] {
+    Security-Appliances-Group {
+      ASOC-APP [icon: server]
+      CSPM-APP [icon: azure-virtual-clusters]
+    }
+  }
+  Accounting [icon: azure-subscriptions] {
+    Accounting-Apps {
+      X [icon: Server]
+      Y [icon: Server]
+    }
+  }
+  Marketing [icon: azure-management-groups] {
+    Sub-Team1 [icon: azure-subscriptions]
+    International [icon: azure-management-groups] {
+      International-Team2 [icon: azure-subscriptions]
+    }
+  }
+}
+
+

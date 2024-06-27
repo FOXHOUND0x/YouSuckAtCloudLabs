@@ -1,11 +1,13 @@
-# OUT OF SCOPE FOR AZ-104
+<p><a target="_blank" href="https://app.eraser.io/workspace/hY1gSWPfHwWDcqj4LQ95" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
 
+# OUT OF SCOPE FOR AZ-104
 ## Understand Azure Subscriptions and Management Groups
 In this lab, you will learn how to programmatically deploy a new Azure Subscription and Management Group using Terraform.
 
 Reference Documentation:
-- [Azure Subscriptions and Tenants Overview](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription)
-- [The 0x - AZ-104 Subscriptions](https://publish.obsidian.md/ysac/Azure/AZ-104/Subscription+Management) 
+
+- [﻿Azure Subscriptions and Tenants Overview](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription) 
+- [﻿The 0x - AZ-104 Subscriptions](https://publish.obsidian.md/ysac/Azure/AZ-104/Subscription+Management) 
 ---
 
 ## How to deploy Azure Resource Groups using Terraform
@@ -16,3 +18,12 @@ The goal is to see how Azure Subscriptions and Management Groups can be created 
 
 ## Cleanup
 After you have verified the deployment, remove the resources by running `pulumi destroy` and then `pulumi stack rm dev` to remove the stack.
+
+
+<!-- eraser-additional-content -->
+## Diagrams
+<!-- eraser-additional-files -->
+<a href="/cloud-labs/azure/az-104/3-subscriptions/README-cloud-architecture-1.eraserdiagram" data-element-id="oMPEopQPDGC4P80IT3wHP"><img src="/.eraser/hY1gSWPfHwWDcqj4LQ95___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----19d2cd2c4bedbf61d10c4a937238c4c6.png" alt="" data-element-id="oMPEopQPDGC4P80IT3wHP" /></a>
+<!-- end-eraser-additional-files -->
+<!-- end-eraser-additional-content -->
+<!--- Eraser file: https://app.eraser.io/workspace/hY1gSWPfHwWDcqj4LQ95 --->

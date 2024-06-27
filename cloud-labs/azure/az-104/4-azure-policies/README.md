@@ -1,9 +1,11 @@
+<p><a target="_blank" href="https://app.eraser.io/workspace/EXmAJokEk1ODcZ8wq1DX" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
+
 # Understand Azure Policies
 In this lab, you will read and learn about Azure Policies.
 
 Reference Documentation:
 
-- [Azure Policies](https://docs.microsoft.com/en-us/azure/governance/policy/overview) 
+- [﻿Azure Policies](https://docs.microsoft.com/en-us/azure/governance/policy/overview)  
 - [﻿The 0x - AZ-104 Azure Policies](https://publish.obsidian.md/ysac/Azure/AZ-104/Azure+Policies) 
 ---
 
@@ -15,3 +17,7 @@ The goal is to see how the azure policy is tied to the Resource Group and that v
 
 ## Cleanup
 After you have verified the deployment, remove the resources by running `pulumi destroy` and then `pulumi stack rm dev` to remove the stack.
+
+
+
+<!--- Eraser file: https://app.eraser.io/workspace/EXmAJokEk1ODcZ8wq1DX --->
