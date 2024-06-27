@@ -9,8 +9,6 @@ Reference Documentation:
 
 - [﻿Azure SaaS Architecture Models](https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/multi-tenant-saas-architecture) 
 
-
-
 <!-- eraser-additional-content -->
 ## Diagrams
 <!-- eraser-additional-files -->

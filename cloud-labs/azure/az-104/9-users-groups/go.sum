@@ -141,8 +141,12 @@ github.com/pulumi/pulumi-azure-native-sdk/storage/v2 v2.42.1 h1:HMKbY7dCxtbjBrtd
 github.com/pulumi/pulumi-azure-native-sdk/storage/v2 v2.42.1/go.mod h1:vWjXu8ju9HhC0K95kpLlLese4/3/qg9mG96NzEpujQo=
 github.com/pulumi/pulumi-azure-native-sdk/v2 v2.42.1 h1:u11UBY/uHUbNDPYyQF6MuDtTlPJi0YEcXdQrgTHohKU=
 github.com/pulumi/pulumi-azure-native-sdk/v2 v2.42.1/go.mod h1:sXtxcyIW/V67zIwmGEZJ5F61EO/S6+1lH8c7zUYNhVA=
+github.com/pulumi/pulumi-azuread/sdk/v5 v5.52.0 h1:u7TVrbkDfST/5kVIZac+TDsyzEcfHJn35pUYK/W/GbU=
+github.com/pulumi/pulumi-azuread/sdk/v5 v5.52.0/go.mod h1:+3sBctTPCFgYHsFtDj7iRHAk+JqDIEeAE7GPdGBE2AA=
 github.com/pulumi/pulumi/sdk/v3 v3.117.0 h1:ImIsukZ2ZIYQG94uWdSZl9dJjJTosQSTsOQTauTNX7U=
 github.com/pulumi/pulumi/sdk/v3 v3.117.0/go.mod h1:kNea72+FQk82OjZ3yEP4dl6nbAl2ngE8PDBc0iFAaHg=
+github.com/pulumi/pulumi/sdk/v3 v3.118.0 h1:NboaaB4cNuehzsax38PO1jZOS6Mzbx/jNaDNaHPmg4c=
+github.com/pulumi/pulumi/sdk/v3 v3.118.0/go.mod h1:kNea72+FQk82OjZ3yEP4dl6nbAl2ngE8PDBc0iFAaHg=
 github.com/rivo/uniseg v0.1.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=
 github.com/rivo/uniseg v0.2.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=
 github.com/rivo/uniseg v0.4.4 h1:8TfxU8dW6PdqD27gjM8MVNuicgxIjxpm4K7x4jp8sis=

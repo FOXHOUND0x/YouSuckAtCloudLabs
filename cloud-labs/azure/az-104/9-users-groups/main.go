@@ -1,47 +1,53 @@
 package main
 
 import (
-	"github.com/pulumi/pulumi-azure-native-sdk/resources/v2"
-	"github.com/pulumi/pulumi-azure-native-sdk/storage/v2"
+	"github.com/pulumi/pulumi-azuread/sdk/v5/go/azuread"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+func createUser(ctx *pulumi.Context, name, displayName, mailNickname, userPrincipalName, password string) (*azuread.User, error) {
+	return azuread.NewUser(ctx, name, &azuread.UserArgs{
+		DisplayName:         pulumi.String(displayName),
+		MailNickname:        pulumi.String(mailNickname),
+		UserPrincipalName:   pulumi.String(userPrincipalName),
+		AccountEnabled:      pulumi.Bool(true),
+		ForcePasswordChange: pulumi.Bool(true),
+		Password:            pulumi.String(password),
+	})
+}
+
+func createRoleAssignment(ctx *pulumi.Context, name string, principalObjectId pulumi.IDOutput, roleId string) (*azuread.DirectoryRoleAssignment, error) {
+	return azuread.NewDirectoryRoleAssignment(ctx, name, &azuread.DirectoryRoleAssignmentArgs{
+		PrincipalObjectId: principalObjectId,
+		DirectoryScopeId:  pulumi.String("/"),
+		RoleId:            pulumi.String(roleId),
+	})
+}
+
 func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
-		// Create an Azure Resource Group
-		resourceGroup, err := resources.NewResourceGroup(ctx, "resourceGroup", nil)
+		const password = "P@ssw0rd"
+
+		ericW, err := createUser(ctx, "ericW", "Eric W", "ericw", "ericW@ysacthe0x.onmicrosoft.com", password)
 		if err != nil {
 			return err
 		}
 
-		// Create an Azure resource (Storage Account)
-		account, err := storage.NewStorageAccount(ctx, "sa", &storage.StorageAccountArgs{
-			ResourceGroupName: resourceGroup.Name,
-			Sku: &storage.SkuArgs{
-				Name: pulumi.String("Standard_LRS"),
-			},
-			Kind: pulumi.String("StorageV2"),
-		})
+		jamie, err := createUser(ctx, "JamieK", "Jamie K", "jamiek", "jamie@ysacthe0x.onmicrosoft.com", password)
 		if err != nil {
 			return err
 		}
 
-		// Export the primary key of the Storage Account
-		ctx.Export("primaryStorageKey", pulumi.All(resourceGroup.Name, account.Name).ApplyT(
-			func(args []interface{}) (string, error) {
-				resourceGroupName := args[0].(string)
-				accountName := args[1].(string)
-				accountKeys, err := storage.ListStorageAccountKeys(ctx, &storage.ListStorageAccountKeysArgs{
-					ResourceGroupName: resourceGroupName,
-					AccountName:       accountName,
-				})
-				if err != nil {
-					return "", err
-				}
+		if _, err := createRoleAssignment(ctx, "globalAdmin", ericW.ID(), "62e90394-69f5-4237-9190-012177145e10"); err != nil {
+			return err
+		}
 
-				return accountKeys.Keys[0].Value, nil
-			},
-		))
+		if _, err := createRoleAssignment(ctx, "appDevelop", ericW.ID(), "cf1c38e5-3621-4004-a7cb-879624dced7c"); err != nil {
+			return err
+		}
+
+		ctx.Export("userPrincipalName", ericW.UserPrincipalName)
+		ctx.Export("objectId", jamie.ObjectId)
 
 		return nil
 	})
