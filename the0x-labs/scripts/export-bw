@@ -1,0 +1,16 @@
+#!/bin/bash
+
+BW_SESSION=$(bw login <email> <password> --raw)
+BACKUP_DIR="/tmp/bitwarden_backup"
+TIMESTAMP=$(date +%F_%T)
+FILENAME="bitwarden_backup_$TIMESTAMP.json"
+
+mkdir -p $BACKUP_DIR
+
+bw export --format json --output $BACKUP_DIR/$FILENAME --session $BW_SESSION --organization <you_wish>
+bw logout
+
+gpg --symmetric --cipher-algo AES256 $BACKUP_DIR/$FILENAME
+rm $BACKUP_DIR/$FILENAME
+
+echo "BW Exported: File: $BACKUP_DIR/$FILENAME.gpg"
