@@ -1,4 +1,4 @@
-<p><a target="_blank" href="https://app.eraser.io/workspace/BHwWWXh1FIPMdoILWuG5" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
+<p><a target="_blank" href="https://app.eraser.io/workspace/xWbKMC6PUPk3CmTlvB99" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
 
 # Understand the core concepts of RBAC in Azure
 The goal in this lab is to understan the scoping differences between azure roles and azure active directory roles. (Azure AD Roles). In this lab you are going to create a new user and assign them a role AD roles (user admin). We will deploy a resource group into our subscription, then we cwill assign an azure reader role to the user we created for the resource group. This is going to allow the user to read the infrastructure components within the subscription and the resource group, but will also allow them to manage other users at the tenant level of our Azure Entra Tenant.
@@ -22,8 +22,8 @@ Azure AD Roles on the other hand are about controlling the identities and their 
 <!-- eraser-additional-content -->
 ## Diagrams
 <!-- eraser-additional-files -->
-<a href="/cloud-labs/azure/az-104/10-rbac/README-Azure Roles-1.eraserdiagram" data-element-id="ZY15-ZzGjCQ_SqPtiYZRN"><img src="/.eraser/BHwWWXh1FIPMdoILWuG5___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----dc25ad156488ae96929ceccf19131b45-Azure-Roles.png" alt="" data-element-id="ZY15-ZzGjCQ_SqPtiYZRN" /></a>
-<a href="/cloud-labs/azure/az-104/10-rbac/README-cloud-architecture-2.eraserdiagram" data-element-id="gkmPZhCxRhzlmK1V6zboH"><img src="/.eraser/BHwWWXh1FIPMdoILWuG5___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----805ab9f5e5dd1677d1b46235a5e8fd03.png" alt="" data-element-id="gkmPZhCxRhzlmK1V6zboH" /></a>
+<a href="/tech-guides/azure/az-104/10-rbac/README-Azure Roles-1.eraserdiagram" data-element-id="CsJ7Pz0vQGar5PAiVBRK5"><img src="/.eraser/xWbKMC6PUPk3CmTlvB99___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----dc25ad156488ae96929ceccf19131b45-Azure-Roles.png" alt="" data-element-id="CsJ7Pz0vQGar5PAiVBRK5" /></a>
+<a href="/tech-guides/azure/az-104/10-rbac/README-cloud-architecture-2.eraserdiagram" data-element-id="tfLDpwSHMqW3i7QYnQmtu"><img src="/.eraser/xWbKMC6PUPk3CmTlvB99___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----805ab9f5e5dd1677d1b46235a5e8fd03.png" alt="" data-element-id="tfLDpwSHMqW3i7QYnQmtu" /></a>
 <!-- end-eraser-additional-files -->
 <!-- end-eraser-additional-content -->
-<!--- Eraser file: https://app.eraser.io/workspace/BHwWWXh1FIPMdoILWuG5 --->
+<!--- Eraser file: https://app.eraser.io/workspace/xWbKMC6PUPk3CmTlvB99 --->
