@@ -2,7 +2,6 @@
 
 # Understand the core concepts of RBAC in Azure
 
-
 ## What is RBAC
 Role based access control can be broken down simple into 3 of the 5 "W's". Who, What and Why. 
 
