@@ -3,7 +3,7 @@
 # Understand the core concepts of RBAC in Azure
 The goal in this lab is to understand the scoping differences between azure roles and azure active directory roles. (Azure AD Roles). In this lab you are going to create a new user and assign them a role AD roles (user admin). We will deploy a resource group into our subscription, then we will assign an azure reader role to the user we created for the resource group. This is going to allow the user to read the infrastructure components within the subscription and the resource group, but will also allow them to manage other users at the tenant level of our Azure Entra Tenant.
 
---- Explainaing the difference between Azure Roles and Azure AD Roles ---
+--- Explaining the difference between Azure Roles and Azure AD Roles ---
 
 ## What is RBAC
 Role based access control can be broken down simple into 3 of the 5 "W's". Who, What and Why. 
