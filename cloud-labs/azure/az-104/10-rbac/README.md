@@ -16,7 +16,8 @@ Azure roles are about managing azure resources within an azure subscription. Sim
 ### What are Azure Active Directory Roles
 Azure AD Roles on the other hand are about controlling the identities and their access to those services. You can think of this as a higher level roles that comes with alot more responsibility +  
 
-### RBAC Architecture Overview 
+
+
 
 
 
