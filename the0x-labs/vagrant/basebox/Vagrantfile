@@ -1,0 +1,10 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "nex" do |vault|
+      vault.vm.box = "bento/fedora-38-arm64"
+      vault.vm.box_version = "202404.23.0"
+      vault.vm.provider "virtualbox" do |vb|
+          vb.memory = "2048"
+          vb.cpus = 2
+      end
+      end
+end
