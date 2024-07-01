@@ -14,7 +14,7 @@ Azure roles are about managing azure resources within an azure subscription. Sim
 [﻿Starter Role](https://app.eraser.io/workspace/BHwWWXh1FIPMdoILWuG5?elements=T8UY-I4_rNL_iK8SQGA6dw) 
 
 ### What are Azure Active Directory Roles
-Azure AD Roles on the other hand are about controlling the identities and their access to those services. You can think of this as a higher level roles that comes with alot more responsibility +  
+Azure AD Roles on the other hand are about controlling the identities and their access to those services. You can think of this as a higher level roles that comes with alot more responsibility.
 
 
 
