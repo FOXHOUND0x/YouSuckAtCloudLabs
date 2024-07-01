@@ -1,0 +1,10 @@
+cloud-architecture-diagram
+
+Entra-ID[icon: microsoft-entra] {
+  AD-Roles [icon: azure-ad-roles-and-administrators] {
+    GA [icon: user-cog]
+    BA [icon: user-cog]
+    UA [icon: user-cog]
+    HDA [icon: user-cog]
+  }
+}
