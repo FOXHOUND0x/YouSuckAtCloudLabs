@@ -6,7 +6,7 @@ The goal in this lab is to understand the scoping differences between azure role
 --- Explaining the difference between Azure Roles and Azure AD Roles ---
 
 ## What is RBAC
-Role based access control can be broken down simple into 3 of the 5 "W's". Who, What and Why. 
+Role based access control can be broken down simple into 3 of the 5 "W's". Who, What and Where. 
 
 ### What Are Azure Roles
 Azure roles are about managing azure resources within an azure subscription. Simply put, roles are simply about controlling what you can do with azure services.
