@@ -1,6 +1,9 @@
 <p><a target="_blank" href="https://app.eraser.io/workspace/BHwWWXh1FIPMdoILWuG5" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
 
 # Understand the core concepts of RBAC in Azure
+The goal in this lab is to understan the scoping differences between azure roles and azure active directory roles. (Azure AD Roles). In this lab you are going to create a new user and assign them a role AD roles (user admin). We will deploy a resource group into our subscription, then we cwill assign an azure reader role to the user we created for the resource group. This is going to allow the user to read the infrastructure components within the subscription and the resource group, but will also allow them to manage other users at the tenant level of our Azure Entra Tenant.
+
+--- Explainaing the difference between Azure Roles and Azure AD Roles ---
 
 ## What is RBAC
 Role based access control can be broken down simple into 3 of the 5 "W's". Who, What and Why. 
@@ -14,10 +17,6 @@ Azure roles are about managing azure resources within an azure subscription. Sim
 
 ### What are Azure Active Directory Roles
 Azure AD Roles on the other hand are about controlling the identities and their access to those services. You can think of this as a higher level roles that comes with alot more responsibility.
-
-
-
-
 
 
 <!-- eraser-additional-content -->
