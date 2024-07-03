@@ -1,4 +1,4 @@
-<p><a target="_blank" href="https://app.eraser.io/workspace/EYOcYAdp3GyRFsiYJ0o5" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
+<p><a target="_blank" href="https://app.eraser.io/workspace/uciXsWgXuDDbusN7MkUU" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
 
 # Understand Various SaaS based architecture models
 In this lab, yoi will learn about two primary SaaS based architecture models, Multi-tenant (URL-Based) and (Virtualization-Based) and how they differ from each other.
@@ -13,13 +13,6 @@ You will need to use the console in this lab to create the two tenants due to te
 #### NOTE: The normal azure portal does not allow you to create tenants, but if you navigate to the new entra admin center, you can create tenants there. [﻿Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/DirectorySwitchBlade/subtitle/) 
 
 
-<!-- eraser-additional-content -->
-## Diagrams
-<!-- eraser-additional-files -->
-<a href="/cloud-labs/azure/az-104/8-multi-tenant-architectures/README-Azure Base Single Tenant-1.eraserdiagram" data-element-id="UbLYukGnM-Op879czTP0Q"><img src="/.eraser/EYOcYAdp3GyRFsiYJ0o5___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----d588de37fa93222eff34bf0d63cbc975-Azure-Base-Single-Tenant.png" alt="" data-element-id="UbLYukGnM-Op879czTP0Q" /></a>
-<a href="/cloud-labs/azure/az-104/8-multi-tenant-architectures/README-Azure Base MTA-2.eraserdiagram" data-element-id="uUG6rV7f-O8_hREL1Xqpa"><img src="/.eraser/EYOcYAdp3GyRFsiYJ0o5___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----07c925d74499e0c214773e7249408fc5-Azure-Base-MTA.png" alt="" data-element-id="uUG6rV7f-O8_hREL1Xqpa" /></a>
-<a href="/cloud-labs/azure/az-104/8-multi-tenant-architectures/README-Azure Multi-Tenant Virtualization-Based SaaS-3.eraserdiagram" data-element-id="cZ43cVnmBgEKf6iuD5nX4"><img src="/.eraser/EYOcYAdp3GyRFsiYJ0o5___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----04a01f399eb3757bd3b6de570341b304-Azure-Multi-Tenant-Virtualization-Based-SaaS.png" alt="" data-element-id="cZ43cVnmBgEKf6iuD5nX4" /></a>
-<a href="/cloud-labs/azure/az-104/8-multi-tenant-architectures/README-URL-Based SaaS-4.eraserdiagram" data-element-id="X3YSzz3sEBpXKX--Drihn"><img src="/.eraser/EYOcYAdp3GyRFsiYJ0o5___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----1f98a5978bd4f6bcadb5eca46fe37d68-URL-Based-SaaS.png" alt="" data-element-id="X3YSzz3sEBpXKX--Drihn" /></a>
-<!-- end-eraser-additional-files -->
-<!-- end-eraser-additional-content -->
-<!--- Eraser file: https://app.eraser.io/workspace/EYOcYAdp3GyRFsiYJ0o5 --->
+
+
+<!--- Eraser file: https://app.eraser.io/workspace/uciXsWgXuDDbusN7MkUU --->
