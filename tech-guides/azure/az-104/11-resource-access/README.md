@@ -20,14 +20,8 @@ Azure RBAC uses a additive permissions model which means that the effective perm
 
 [﻿View on canvas](https://app.eraser.io/workspace/mYFpWRMqFgWYSM9x7yWk?elements=UnwM4rfzQ1foUlFjzvwjUA) 
 
-
-
 ### Lab Goals
 We are going to create a user inside of our microsoft entra service, then attach 2 roles ["contributor", "reader"] to this user. This will help us understand the concept of additive properties. From here we will delete the  roles that are assigned to the user then create 2 custom roles with custom role definitions. We will deploy 2 azure storage accounts, one at the resource group level and another at the subscription level. We will play around with figuring out what our user can and cannot see as the permission for the custom roles will be scoped to the RG. This will help us solidify our understanding of permissions inheritance and scopes.
-
-
-
-
 
 
 <!-- eraser-additional-content -->
