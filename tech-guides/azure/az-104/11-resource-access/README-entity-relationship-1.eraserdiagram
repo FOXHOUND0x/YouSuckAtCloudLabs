@@ -1,0 +1,27 @@
+entity-relationship-diagram
+
+reader_rg [icon: user, color: blue] {
+  subscription false
+  networking true
+  storage true
+}
+
+reader_sub [icon: user, color: purple]{
+  subscription true
+  VM true
+  AZF true
+}
+
+reader_final[icon: user, color: orange] {
+  subscription true
+  networking true
+  storage true
+  VM true
+  AZF true
+}
+
+reader_rg - reader_sub
+
+reader_sub - reader_final
+
+
