@@ -1,12 +1,12 @@
-<p><a target="_blank" href="https://app.eraser.io/workspace/uqsaaqxiiUHCA6SpjD7a" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
+<p><a target="_blank" href="https://app.eraser.io/workspace/zghG8SKmwyUBMgTS8Mll" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
 
 # How to Authenticate Pulumi with Azure
 This guide provides step-by-step instructions to authenticate Pulumi with Azure, enabling you to deploy and manage your infrastructure using Pulumi with Azure resources. This will be used in all of the azure based labs in this directory.
 
 ## Prerequisites
-- An active Azure account. If you don't have one, [﻿create an Azure account](https://azure.microsoft.com/en-us/free/) .
-- Azure CLI installed. You can download and install it from the [﻿official Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) .
-- Pulumi CLI installed. You can download and install it from the [﻿Pulumi installation guide](https://www.pulumi.com/docs/get-started/install/) .
+- An active Azure account. If you don't have one, [﻿create an Azure account](https://azure.microsoft.com/en-us/free/)  .
+- Azure CLI installed. You can download and install it from the [﻿official Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)  .
+- Pulumi CLI installed. You can download and install it from the [﻿Pulumi installation guide](https://www.pulumi.com/docs/get-started/install/)  .
 ## Steps to Authenticate Pulumi with Azure
 ### 1. Install the Azure CLI
 Ensure you have the Azure CLI installed. If you don’t have it installed, follow the instructions below based on your operating system.
@@ -59,21 +59,20 @@ This will perform a dry run, showing what resources would be created or updated.
 ### 5. Run Pulumi Commands
 With authentication set up, you can now use Pulumi to manage Azure resources. Here are a few commonly used commands:
 
-- `pulumi up` : Deploy your infrastructure.
-- `pulumi preview` : Show what changes will be made without actually applying them.
-- `pulumi destroy` : Remove all deployed infrastructure.
-- `pulumi stack` : Manage your Pulumi stacks.
+- `pulumi up`  : Deploy your infrastructure.
+- `pulumi preview`  : Show what changes will be made without actually applying them.
+- `pulumi destroy`  : Remove all deployed infrastructure.
+- `pulumi stack`  : Manage your Pulumi stacks.
 ## Troubleshooting
 If you encounter issues with authentication, check the following:
 
 - Ensure the Azure CLI is installed and the command `az login`  works correctly.
-- Validate the correct subscription is set using `az account set` .
+- Validate the correct subscription is set using `az account set`  .
 - Check your environment variables for any conflicting credentials.
-For detailed troubleshooting, refer to the [﻿Pulumi Azure provider documentation](https://www.pulumi.com/docs/reference/pkg/azure/).
-
+For detailed troubleshooting, refer to the [﻿Pulumi Azure provider documentation](https://www.pulumi.com/docs/reference/pkg/azure/) .
 ## Conclusion
 This guide should help you authenticate Pulumi with Azure and start managing your Azure resources programmatically. For more detailed scenarios and advanced configurations, refer to the [﻿Pulumi Azure documentation](https://www.pulumi.com/docs/reference/pkg/azure/).
 
 
 
-<!--- Eraser file: https://app.eraser.io/workspace/uqsaaqxiiUHCA6SpjD7a --->
+<!--- Eraser file: https://app.eraser.io/workspace/zghG8SKmwyUBMgTS8Mll --->

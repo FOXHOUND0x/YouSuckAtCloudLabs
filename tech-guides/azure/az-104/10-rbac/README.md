@@ -22,7 +22,7 @@ Azure AD Roles on the other hand are about controlling the identities and their 
 <!-- eraser-additional-content -->
 ## Diagrams
 <!-- eraser-additional-files -->
-<a href="/tech-guides/azure/az-104/10-rbac/README-Azure Roles-1.eraserdiagram" data-element-id="CsJ7Pz0vQGar5PAiVBRK5"><img src="/.eraser/xWbKMC6PUPk3CmTlvB99___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----dc25ad156488ae96929ceccf19131b45-Azure-Roles.png" alt="" data-element-id="CsJ7Pz0vQGar5PAiVBRK5" /></a>
+<a href="/tech-guides/azure/az-104/10-rbac/README-Azure Roles-1.eraserdiagram" data-element-id="CsJ7Pz0vQGar5PAiVBRK5"><img src="/.eraser/xWbKMC6PUPk3CmTlvB99___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----303870e0f9f1df7473e72732f79920c2-Azure-Roles.png" alt="" data-element-id="CsJ7Pz0vQGar5PAiVBRK5" /></a>
 <a href="/tech-guides/azure/az-104/10-rbac/README-cloud-architecture-2.eraserdiagram" data-element-id="tfLDpwSHMqW3i7QYnQmtu"><img src="/.eraser/xWbKMC6PUPk3CmTlvB99___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---diagram----805ab9f5e5dd1677d1b46235a5e8fd03.png" alt="" data-element-id="tfLDpwSHMqW3i7QYnQmtu" /></a>
 <!-- end-eraser-additional-files -->
 <!-- end-eraser-additional-content -->

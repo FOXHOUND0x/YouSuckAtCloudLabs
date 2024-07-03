@@ -12,4 +12,3 @@ The0xSubscription [icon: azure-subscriptions] {
 
 The0xUser -> Role: User has role
 Role -> The0xSubscription: Role has access to
-
