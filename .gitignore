@@ -18,3 +18,21 @@ the0x-labs/vagrant/hashicorp/vault/.vagrant/machines/vault/vmware_desktop/
 the0x-labs/vagrant/hashicorp/vault/.vagrant/bundler/
 
 the0x-labs/vagrant/hashicorp/vault/.vagrant/rgloader/
+
+*.txt
+
+the0x-labs/aws/atsign-demo/.terraform.lock.hcl
+
+the0x-labs/aws/atsign-demo/.terraform/providers/registry.terraform.io/hashicorp/tls/4.0.5/darwin_arm64/terraform-provider-tls_v4.0.5_x5
+
+the0x-labs/aws/atsign-demo/.terraform/providers/registry.terraform.io/hashicorp/http/3.4.3/darwin_arm64/terraform-provider-http_v3.4.3_x5
+
+the0x-labs/aws/atsign-demo/.terraform/providers/registry.terraform.io/hashicorp/aws/5.58.0/darwin_arm64/terraform-provider-aws_v5.58.0_x5
+
+the0x-labs/aws/atsign-demo/sshnp.tgz
+
+the0x-labs/packer/VM/amazon-linux/atsign/universal.sh
+
+the0x-labs/aws/atsign-demo/.terraform/terraform.tfstate
+
+.DS_Store

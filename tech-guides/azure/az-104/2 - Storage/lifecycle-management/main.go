@@ -8,13 +8,11 @@ import (
 
 func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
-		// Create an Azure Resource Group
-		resourceGroup, err := resources.NewResourceGroup(ctx, "resourceGroup", nil)
+		resourceGroup, err := resources.NewResourceGroup(ctx, "the0x-resourceGroup", nil)
 		if err != nil {
 			return err
 		}
 
-		// Create an Azure resource (Storage Account)
 		account, err := storage.NewStorageAccount(ctx, "sa", &storage.StorageAccountArgs{
 			ResourceGroupName: resourceGroup.Name,
 			Sku: &storage.SkuArgs{
@@ -26,23 +24,54 @@ func main() {
 			return err
 		}
 
-		// Export the primary key of the Storage Account
-		ctx.Export("primaryStorageKey", pulumi.All(resourceGroup.Name, account.Name).ApplyT(
-			func(args []interface{}) (string, error) {
-				resourceGroupName := args[0].(string)
-				accountName := args[1].(string)
-				accountKeys, err := storage.ListStorageAccountKeys(ctx, &storage.ListStorageAccountKeysArgs{
-					ResourceGroupName: resourceGroupName,
-					AccountName:       accountName,
-				})
-				if err != nil {
-					return "", err
-				}
+		_, err = storage.NewBlobContainer(ctx, "the0container", &storage.BlobContainerArgs{
+			AccountName:       account.Name,
+			ResourceGroupName: resourceGroup.Name,
+		})
+		if err != nil {
+			return err
+		}
 
-				return accountKeys.Keys[0].Value, nil
+		_, err = storage.NewManagementPolicy(ctx, "policy", &storage.ManagementPolicyArgs{
+			AccountName:          account.Name,
+			ManagementPolicyName: pulumi.String("default"),
+			Policy: &storage.ManagementPolicySchemaArgs{
+				Rules: storage.ManagementPolicyRuleArray{
+					&storage.ManagementPolicyRuleArgs{
+						Definition: &storage.ManagementPolicyDefinitionArgs{
+							Actions: &storage.ManagementPolicyActionArgs{
+								BaseBlob: &storage.ManagementPolicyBaseBlobArgs{
+									Delete: &storage.DateAfterModificationArgs{
+										DaysAfterModificationGreaterThan: pulumi.Float64(30),
+									},
+									TierToCool: &storage.DateAfterModificationArgs{
+										DaysAfterModificationGreaterThan: pulumi.Float64(7),
+									},
+								},
+							},
+							Filters: &storage.ManagementPolicyFilterArgs{
+								BlobTypes: pulumi.StringArray{
+									pulumi.String("blockBlob"),
+								},
+								PrefixMatch: pulumi.StringArray{
+									pulumi.String("container1/"),
+								},
+							},
+						},
+						Enabled: pulumi.Bool(true),
+						Name:    pulumi.String("MoveToCoolAndDeleteRule"),
+						Type:    pulumi.String("Lifecycle"),
+					},
+				},
 			},
-		))
+			ResourceGroupName: resourceGroup.Name,
+		})
+		if err != nil {
+			return err
+		}
 
+		ctx.Export("resourceGroupName", resourceGroup.Name)
+		ctx.Export("accountName", account.Name)
 		return nil
 	})
 }
