@@ -2,17 +2,11 @@
 
 In this lab we are going to cover Azure file Shares and Azure File Sync. You can go further into depth with the written blog post over on the technical blog post over at the you suck at cloud blog to get a in depth analysis.
 
-
-
 Simply put, azure file shares are managed file systems that live within your azure storage account. They allow your to easily migrate file servers to the cloud or to create easily accessible hybrid storage solutions. There are various architectural patterns that can be followed, such as using on-prem windows file servers as cache endpoints for example.
-
-
 
 In this lab we deploy a single azure file share into our azure subscription and resource group using `terraform` . From here we use the Microsoft Entra as our authentication point to the share itself from our local machine. The diagram below demonstrates the flow
 
 ![Figure 1](/.eraser/GpPinfiofPREsqOZRJGi___5TeIkEqzZuNt0Cv0uz03Dj9ejbv1___---figure---mToXA_4Buw_grckOP3X0H---figure---bNg73WNpL7u8zWkdX7xNBQ.png "Figure 1")
-
-
 
 
 <!-- eraser-additional-content -->

@@ -36,3 +36,19 @@ the0x-labs/packer/VM/amazon-linux/atsign/universal.sh
 the0x-labs/aws/atsign-demo/.terraform/terraform.tfstate
 
 .DS_Store
+
+miscreants/.terraform.lock.hcl
+
+the0x-labs/aws/lightsail-demo/.terraform.lock.hcl
+
+the0x-labs/aws/lightsail-demo/.terraform/terraform.tfstate
+
+tech-guides/azure/az-104/2 - Storage/azure-file-shares/.terraform/providers/registry.terraform.io/hashicorp/azuread/2.53.1/darwin_arm64/
+
+tech-guides/azure/az-104/2 - Storage/azure-file-shares/.terraform/modules/
+
+tech-guides/azure/az-104/2 - Storage/storage-security/.terraform/
+
+*.hcl
+
+the0x-labs/aws/HiveNet/.terraform/
