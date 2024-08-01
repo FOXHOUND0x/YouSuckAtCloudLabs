@@ -42,10 +42,10 @@ resource "aws_iam_role" "ragnar_lambda_role" {
 #     })
 # }
 
-resource "aws_lambda_permission" "ragnar_lambda_permission" {
-    statement_id = "AllowExecutionFromAPIGateway"
-    action = "lambda:InvokeFunction"
-    function_name = aws_lambda_function.ragnar_lambda.function_name
-    principal = "apigateway.amazonaws.com"
-    source_arn = "${aws_api_gateway_rest_api.ragnar_api.execution_arn}/*/*"
-}
+# resource "aws_lambda_permission" "ragnar_lambda_permission" {
+#     statement_id = "AllowExecutionFromAPIGateway"
+#     action = "lambda:InvokeFunction"
+#     function_name = aws_lambda_function.ragnar_lambda.function_name
+#     principal = "apigateway.amazonaws.com"
+#     source_arn = "${aws_api_gateway_rest_api.ragnar_api.execution_arn}/*/*"
+# }
