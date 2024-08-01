@@ -52,3 +52,15 @@ tech-guides/azure/az-104/2 - Storage/storage-security/.terraform/
 *.hcl
 
 the0x-labs/aws/HiveNet/.terraform/
+
+the0x-labs/security/doppler-rotation/.terraform/providers/registry.terraform.io/dopplerhq/doppler/1.9.0/darwin_arm64/
+
+*.0_x5
+
+*.2_x5
+
+*.tfstate
+
+*.backup
+
+*.json
