@@ -1,3 +1,3 @@
 output "local_ip" {
-    value = data.http.local.body
+    value = local.my_ip
 }

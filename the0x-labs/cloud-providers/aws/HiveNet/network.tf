@@ -49,7 +49,7 @@ resource "aws_network_acl" "hive_egress_nacl" {
         protocol = "tcp"
         rule_no = 100
         action = "allow"
-        cidr_block = chomp(data.http.local.body)
+        cidr_block = local.my_ip_cidr
         from_port = 80
         to_port = 80
     }
@@ -58,7 +58,7 @@ resource "aws_network_acl" "hive_egress_nacl" {
         protocol = "tcp"
         rule_no = 101
         action = "allow"
-        cidr_block = chomp(data.http.local.body)
+        cidr_block = local.my_ip_cidr
         from_port = 443
         to_port = 443
     }
