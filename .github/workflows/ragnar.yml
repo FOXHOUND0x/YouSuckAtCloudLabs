@@ -3,7 +3,7 @@ name: Ragnar
 on: [pull_request]
 
 env:
-  tf_actions_working_dir: "/the0x-labs/cloud-providers/aws/ragnar/"
+  tf_actions_working_dir: "/the0x-labs/cloud-providers/aws/ragnar/infra/"
 
 permissions:
   pull-requests: write
