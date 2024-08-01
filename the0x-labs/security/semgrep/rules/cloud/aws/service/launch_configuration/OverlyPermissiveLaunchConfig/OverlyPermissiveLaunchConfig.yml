@@ -1,0 +1,48 @@
+rules:
+  - id: overly-permissive-launch-config
+    patterns:
+      - pattern: |
+          resource "aws_launch_configuration" $ANYTHING {
+            ...
+            iam_instance_profile = $PROFILE  # IAM role attached
+            ...
+          }
+      - pattern: |
+          resource "aws_iam_role" $ANYTHING {
+            ...
+            policy = jsonencode({
+              Version = "2012-10-17"
+              Statement = [
+                {
+                  Effect = "Allow"
+                  Action = "iam:*"  # Overly permissive IAM role
+                  Resource = "*"
+                }
+              ]
+            })
+            ...
+          }
+      - pattern-not: |
+          resource "aws_iam_role" $ANYTHING {
+            ...
+            policy = jsonencode({
+              Version = "2012-10-17"
+              Statement = [
+                {
+                  Effect = "Allow"
+                  Action = ["s3:ListBucket", "s3:GetObject"]  # Least privilege example
+                  Resource = "*"
+                }
+              ]
+            })
+            ...
+          }
+    message: "Ensure that launch configurations follow the least privilege principle."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Identity and Access Management
+      resource: aws_launch_configuration
+      resource-type: EC2
+      reference_id: AC-AW-IA-LC-H-0441
+      version: 1

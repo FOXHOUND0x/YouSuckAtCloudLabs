@@ -1,0 +1,51 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "sso:*",
+              "identitystore:*",
+              "organizations:DescribeAccount",
+              "organizations:DescribeOrganization",
+              "organizations:ListAccounts",
+              "organizations:ListTagsForResource",
+              "organizations:ListRoots",
+              "organizations:ListOrganizationalUnitsForParent",
+              "organizations:ListChildren",
+              "organizations:ListAccountsForParent",
+              "iam:GetSAMLProvider",
+              "iam:ListSAMLProviders",
+              "ds:DescribeDirectories",
+              "ds:DescribeTrusts",
+              "cloudtrail:DescribeTrails",
+              "cloudtrail:GetTrailStatus",
+              "cloudtrail:LookupEvents",
+              "ec2:DescribeNetworkInterfaces",
+              "ec2:CreateNetworkInterface",
+              "ec2:DeleteNetworkInterface",
+              "iam:ListPolicies",
+              "iam:ListRoles",
+              "iam:ListUsers",
+              "iam:ListGroups",
+              "sso-directory:*",
+              "access-analyzer:*",
+              "account:GetAlternateContact",
+              "account:ListRegions"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "iam:CreateServiceLinkedRole"
+          ],
+          "Resource": "arn:aws:iam::*:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+          "Condition": {
+              "StringLike": {
+                  "iam:AWSServiceName": "sso.amazonaws.com"
+              }
+          }
+      }
+  ]
+}

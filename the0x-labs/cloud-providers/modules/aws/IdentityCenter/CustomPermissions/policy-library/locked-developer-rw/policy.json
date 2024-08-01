@@ -1,0 +1,316 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "DefaultPermit",
+          "Effect": "Allow",
+          "Action": "*",
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableBillingModification",
+          "Effect": "Deny",
+          "Action": [
+              "aws-portal:ViewPaymentMethods",
+              "aws-portal:ViewBudget",
+              "aws-portal:ViewBilling",
+              "aws-portal:ModifyPaymentMethods",
+              "aws-portal:ModifyBilling",
+              "aws-portal:ModifyAccount"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableCloudTrailModifications",
+          "Effect": "Deny",
+          "Action": [
+              "cloudtrail:UpdateTrail",
+              "cloudtrail:StopLogging",
+              "cloudtrail:StartLogging",
+              "cloudtrail:DeleteTrail",
+              "cloudtrail:CreateTrail"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableUserRoleModifications",
+          "Effect": "Deny",
+          "Action": [
+              "iam:Update*",
+              "iam:Remove*",
+              "iam:Detach*",
+              "iam:Deactivate*iam",
+              "iam:Attach*"
+          ],
+          "Resource": [
+              "arn:aws:iam::280420224304:role/Security-ECOMPROD-RW",
+              "arn:aws:iam::280420224304:role/SRE-ECOMPROD-RW",
+              "arn:aws:iam::280420224304:role/ReadOnly-ECOMPROD-RO",
+              "arn:aws:iam::280420224304:role/Operations-ECOMPROD-RW",
+              "arn:aws:iam::280420224304:role/Networking-ECOMPROD-RW",
+              "arn:aws:iam::280420224304:role/Developer-ECOMPROD-RW",
+              "arn:aws:iam::280420224304:role/Developer-ECOMPROD-RO",
+              "arn:aws:iam::280420224304:policy/base-user-policies-*"
+          ]
+      },
+      {
+          "Sid": "DisableGovernanceTagModifications",
+          "Effect": "Deny",
+          "Action": [
+              "tag:removeResourceTags",
+              "tag:addResourceTags"
+          ],
+          "Resource": "*",
+          "Condition": {
+              "StringEquals": {
+                  "ec2:ResourceTag/application": "*",
+                  "ec2:ResourceTag/applicationGroup": "*",
+                  "ec2:ResourceTag/contact": "*",
+                  "ec2:ResourceTag/department": "*",
+                  "ec2:ResourceTag/registry_id": "*",
+                  "ec2:ResourceTag/security": "*",
+                  "ec2:ResourceTag/service_id": "*"
+              }
+          }
+      },
+      {
+          "Sid": "DisableCommonAndPublicNetworkModifications",
+          "Effect": "Deny",
+          "Action": [
+              "ec2:ResetNetworkInterfaceAttribute",
+              "ec2:ReplaceRouteTableAssociation",
+              "ec2:ReplaceRoute",
+              "ec2:ReplaceNetworkAclEntry",
+              "ec2:ReplaceNetworkAclAssociation",
+              "ec2:RejectVpcPeeringConnection",
+              "ec2:ModifyVpcEndpoint",
+              "ec2:ModifyVpcAttribute",
+              "ec2:ModifySubnetAttribute",
+              "ec2:EnableVpcClassicLink",
+              "ec2:EnableVgwRoutePropagation",
+              "ec2:DisassociateRouteTable",
+              "ec2:DisableVgwRoutePropagation",
+              "ec2:DetachVpnGateway",
+              "ec2:DetachInternetGateway",
+              "ec2:DeleteVpnGateway",
+              "ec2:DeleteVpnConnectionRoute",
+              "ec2:DeleteVpnConnection",
+              "ec2:DeleteVpcPeeringConnection",
+              "ec2:DeleteVpcEndpoints",
+              "ec2:DeleteVpc",
+              "ec2:DeleteSubnet",
+              "ec2:DeleteRouteTable",
+              "ec2:DeleteRoute",
+              "ec2:DeleteNetworkAclEntry",
+              "ec2:DeleteNetworkAcl",
+              "ec2:DeleteInternetGateway",
+              "ec2:DeleteDhcpOptions",
+              "ec2:DeleteCustomerGateway",
+              "ec2:CreateVpnGateway",
+              "ec2:CreateVpnConnectionRoute",
+              "ec2:CreateVpnConnection",
+              "ec2:CreateVpcPeeringConnection",
+              "ec2:CreateVpcEndpoint",
+              "ec2:CreateVpc",
+              "ec2:CreateSubnet",
+              "ec2:CreateRouteTable",
+              "ec2:CreateRoute",
+              "ec2:CreateNetworkAclEntry",
+              "ec2:CreateNetworkAcl",
+              "ec2:CreateInternetGateway",
+              "ec2:CreateCustomerGateway",
+              "ec2:AttachVpnGateway",
+              "ec2:AttachInternetGateway",
+              "ec2:AssociateRouteTable",
+              "ec2:AssociateDhcpOptions",
+              "ec2:AcceptVpcPeeringConnection",
+              "directconnect:*"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableElasticIPModifications",
+          "Effect": "Deny",
+          "Action": [
+              "ec2:ReleaseAddress",
+              "ec2:DisassociateAddress",
+              "ec2:AssociateAddress",
+              "ec2:AllocateAddress"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableS3PublicAccess",
+          "Effect": "Deny",
+          "Action": [
+              "s3:PutObjectAcl",
+              "s3:PutBucketAcl"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableS3LoggingPermission",
+          "Effect": "Deny",
+          "Action": "s3:PutBucketLogging",
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableTrustedAdvisorAccess",
+          "Effect": "Deny",
+          "Action": "trustedadvisor:*",
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableSecurityModifications",
+          "Effect": "Deny",
+          "Action": [
+              "waf:*",
+              "inspector:*",
+              "config:Stop*",
+              "config:Start*",
+              "config:Put*",
+              "config:Delete*",
+              "cloudhsm:*"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableAccessToRestrictedAssets",
+          "Effect": "Deny",
+          "NotAction": "ec2:Describe*",
+          "Resource": "*",
+          "Condition": {
+              "StringEquals": {
+                  "ec2:ResourceTag/department": [
+                      "security",
+                      "operations"
+                  ]
+              }
+          }
+      },
+      {
+          "Sid": "DisableAdministrativeFunctions",
+          "Effect": "Deny",
+          "Action": [
+              "route53domains:*",
+              "ec2:PurchaseReservedInstancesOffering",
+              "ds:*"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableACMWriteAccess",
+          "Effect": "Deny",
+          "Action": [
+              "acm:ResendValidationEmail",
+              "acm:RequestCertificate",
+              "acm:RemoveTagsFromCertificate",
+              "acm:ImportCertificate",
+              "acm:GetCertificate",
+              "acm:DeleteCertificate",
+              "acm:AddTagsToCertificate"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableBulkTransferMechanisms",
+          "Effect": "Deny",
+          "Action": [
+              "storagegateway:*",
+              "importexport:*"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableIAMUserCreation",
+          "Effect": "Deny",
+          "Action": "iam:CreateUser",
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableSSMWAccess",
+          "Effect": "Deny",
+          "Action": [
+              "ssm:Update*",
+              "ssm:Terminate*",
+              "ssm:Stop*",
+              "ssm:Start*",
+              "ssm:Send*",
+              "ssm:Re*",
+              "ssm:PutParameter",
+              "ssm:PutInventory",
+              "ssm:PutComplianceItems",
+              "ssm:ModifyDocumentPermission",
+              "ssm:LabelParameterVersion",
+              "ssm:DisassociateOpsItemRelatedItem",
+              "ssm:Deregister*",
+              "ssm:Delete*",
+              "ssm:Create*",
+              "ssm:Cancel*",
+              "ssm:AssociateOpsItemRelatedItem",
+              "ssm:AddTagsToResource"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableSSMIncidentsWAccess",
+          "Effect": "Deny",
+          "Action": [
+              "ssm-incidents:Update*",
+              "ssm-incidents:UntagResource",
+              "ssm-incidents:TagResource",
+              "ssm-incidents:StartIncident",
+              "ssm-incidents:PutResourcePolicy",
+              "ssm-incidents:Delete*",
+              "ssm-incidents:Create*"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableSSMContactsWAccess",
+          "Effect": "Deny",
+          "Action": [
+              "ssm-contacts:Update*",
+              "ssm-contacts:UntagResource",
+              "ssm-contacts:TagResource",
+              "ssm-contacts:StopEngagement",
+              "ssm-contacts:StartEngagement",
+              "ssm-contacts:SendActivationCode",
+              "ssm-contacts:PutContactPolicy",
+              "ssm-contacts:Delete*",
+              "ssm-contacts:DeactivateContactChannel*",
+              "ssm-contacts:Create*",
+              "ssm-contacts:AssociateContact",
+              "ssm-contacts:ActivateContactChannel",
+              "ssm-contacts:AcceptPage"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableSSMGUIConnectRWAccess",
+          "Effect": "Deny",
+          "Action": "ssm-guiconnect:*",
+          "Resource": "*"
+      },
+      {
+          "Sid": "DisableKMSRWAccess",
+          "Effect": "Deny",
+          "Action": [
+              "kms:Update*",
+              "kms:ScheduleKeyDeletion",
+              "kms:Re*",
+              "kms:PutKeyPolicy",
+              "kms:ListRetirableGrants",
+              "kms:ListGrants",
+              "kms:Encrypt",
+              "kms:Enable*",
+              "kms:DisableKey",
+              "kms:DeleteAlias",
+              "kms:Decrypt",
+              "kms:Create*",
+              "kms:Cancel*"
+          ],
+          "Resource": "*"
+      }
+  ]
+}

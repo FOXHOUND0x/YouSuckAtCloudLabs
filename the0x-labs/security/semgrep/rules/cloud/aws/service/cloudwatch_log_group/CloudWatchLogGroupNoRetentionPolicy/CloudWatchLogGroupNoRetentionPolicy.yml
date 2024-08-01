@@ -1,0 +1,24 @@
+rules:
+  - id: cloudwatch-log-group-no-retention-policy
+    patterns:
+      - pattern: |
+          resource "aws_cloudwatch_log_group" $ANYTHING {
+            ...
+            retention_in_days = $RETENTION_PERIOD
+            ...
+          }
+      - pattern-not: |
+          resource "aws_cloudwatch_log_group" $ANYTHING {
+            ...
+            retention_in_days = null  # No retention policy set
+            ...
+          }
+    message: "Ensure AWS CloudWatch log group has a retention policy set."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Logging and Monitoring
+      resource: aws_cloudwatch_log_group
+      resource-type: CloudWatch
+      reference_id: AWS.ACLG.LM.MEDIUM.0068
+      version: 1

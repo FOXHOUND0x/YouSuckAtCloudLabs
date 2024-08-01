@@ -1,0 +1,24 @@
+rules:
+  - id: kinesis-not-encrypted-with-kms
+    patterns:
+      - pattern: |
+          resource "aws_kinesis_stream" $ANYTHING {
+            ...
+            encryption_type = "KMS"  # Kinesis stream is encrypted with KMS
+            ...
+          }
+      - pattern-not: |
+          resource "aws_kinesis_stream" $ANYTHING {
+            ...
+            encryption_type = "NONE"  # Kinesis stream is not encrypted
+            ...
+          }
+    message: "Ensure Kinesis Stream is encrypted with KMS."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Data Protection
+      resource: aws_kinesis_stream
+      resource-type: Kinesis
+      reference_id: AWS.Kinesis.EncryptionandKeyManagement.High.0412
+      version: 2

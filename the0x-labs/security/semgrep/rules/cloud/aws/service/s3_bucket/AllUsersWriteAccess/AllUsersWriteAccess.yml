@@ -1,0 +1,28 @@
+rules:
+  - id: all-users-write-access
+    patterns:
+      - pattern: |
+          resource "aws_s3_bucket" $ANYTHING {
+            ...
+            acl = "public-read-write"  # Public write access is allowed
+            ...
+          }
+      - pattern: |
+          resource "aws_s3_bucket" $ANYTHING {
+            ...
+            grants {
+              ...
+              permission = "WRITE"  # Granting write permission to everyone
+              ...
+            }
+            ...
+          }
+    message: "Ensure that S3 buckets do not allow public write access."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Identity and Access Management
+      resource: aws_s3_bucket
+      resource-type: S3
+      reference_id: AWS.S3Bucket.IAM.High.0379
+      version: 2

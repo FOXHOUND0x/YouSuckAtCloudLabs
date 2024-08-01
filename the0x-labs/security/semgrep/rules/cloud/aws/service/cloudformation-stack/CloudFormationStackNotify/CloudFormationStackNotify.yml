@@ -1,0 +1,24 @@
+rules:
+  - id: cloudformation-stack-notifications
+    patterns:
+      - pattern: |
+          resource "aws_cloudformation_stack" $ANYTHING {
+            ...
+            notification_arns = $NOT_NULL
+            ...
+          }
+      - pattern-not: |
+          resource "aws_cloudformation_stack" $ANYTHING {
+            ...
+            notification_arns = $NULL
+            ...
+          }
+    message: "AWS CloudFormation Stacks should have notification ARNs enabled."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Security Best Practices
+      resource: aws_cloudformation_stack
+      resource-type: CloudFormation
+      reference_id: AWS.CloudFormation.Medium.0603
+      version: 1

@@ -1,0 +1,44 @@
+rules:
+  - id: allow-list-action-from-all-principals
+    patterns:
+      - pattern: |
+          resource "aws_s3_bucket_policy" $ANYTHING {
+            ...
+            policy = jsonencode({
+              Version = "2012-10-17"
+              Statement = [
+                {
+                  Effect = "Allow"
+                  Principal = "*"  # Allowing access from all principals
+                  Action = "s3:Write"  # Allowing List action
+                  Resource = $RESOURCE
+                }
+              ]
+            })
+            ...
+          }
+      - pattern: |
+          resource "aws_s3_bucket_policy" $ANYTHING {
+            ...
+            policy = jsonencode({
+              Version = "2012-10-17"
+              Statement = [
+                {
+                  Effect = "Allow"
+                  Principal = "*"
+                  Action = "s3:*"  # Allowing all actions from all principals
+                  Resource = $RESOURCE
+                }
+              ]
+            })
+            ...
+          }
+    message: "Ensure that S3 bucket policies do not allow the s3:List action from all principals."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Identity and Access Management
+      resource: aws_s3_bucket_policy
+      resource-type: S3
+      reference_id: AWS.IamPolicy.IAM.High.0374
+      version: 2

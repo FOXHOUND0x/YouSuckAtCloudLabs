@@ -1,0 +1,36 @@
+rules:
+  - id: iam-user-inline-policy
+    patterns:
+      - pattern: |
+          resource "aws_iam_user_policy" $ANYTHING {
+            ...
+            user = $USER  # Policy attached directly to a user
+            ...
+          }
+      - pattern: |
+          resource "aws_iam_user" $ANYTHING {
+            ...
+            inline_policy = $POLICY_NAME  # Inline policy attached to user
+            ...
+          }
+      - pattern-not: |
+          resource "aws_iam_group_policy" $ANYTHING {
+            ...
+            group = $GROUP  # Policy attached to a group
+            ...
+          }
+      - pattern-not: |
+          resource "aws_iam_role_policy" $ANYTHING {
+            ...
+            role = $ROLE  # Policy attached to a role
+            ...
+          }
+    message: "Ensure IAM policies are attached only to groups or roles, not directly to users."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Identity and Access Management
+      resource: aws_iam_user_policy
+      resource-type: IAM
+      reference_id: AWS.AIUP.IAM.MEDIUM.0049
+      version: 1

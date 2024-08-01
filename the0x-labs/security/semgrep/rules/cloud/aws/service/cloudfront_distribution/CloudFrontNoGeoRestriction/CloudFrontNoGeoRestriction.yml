@@ -1,0 +1,34 @@
+rules:
+  - id: cloudfront-no-geo-restriction
+    patterns:
+      - pattern: |
+          resource "aws_cloudfront_distribution" $ANYTHING {
+            ...
+            restrictions {
+              geo_restriction {
+                restriction_type = $RESTRICTION_TYPE
+                ...
+              }
+            }
+            ...
+          }
+      - pattern-not: |
+          resource "aws_cloudfront_distribution" $ANYTHING {
+            ...
+            restrictions {
+              geo_restriction {
+                restriction_type = "none"
+                ...
+              }
+            }
+            ...
+          }
+    message: "Ensure that geo restriction is enabled for your Amazon CloudFront distribution."
+    severity: LOW
+    languages: [terraform]
+    metadata:
+      domain: Infrastructure Security
+      resource: aws_cloudfront_distribution
+      resource-type: CloudFront
+      reference_id: AC-AW-IS-CD-M-0026
+      version: 2

@@ -1,0 +1,30 @@
+rules:
+  - id: ecs-service-admin
+    patterns:
+      - pattern: |
+          resource "aws_ecs_service" $ANYTHING {
+            ...
+            iam_role = "arn:aws:iam::123456789012:role/Admin"  # Admin role specified
+            ...
+          }
+      - pattern: |
+          resource "aws_ecs_service" $ANYTHING {
+            ...
+            iam_role = $ROLE  # Generic IAM role
+            ...
+          }
+      - pattern-not: |
+          resource "aws_ecs_service" $ANYTHING {
+            ...
+            iam_role = "arn:aws:iam::123456789012:role/NonAdminRole"  # Non-admin role specified
+            ...
+          }
+    message: "Ensure there are no ECS services with Admin roles."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Identity and Access Management
+      resource: aws_ecs_service
+      resource-type: ECS
+      reference_id: AWS.ECS.High.0436
+      version: 1

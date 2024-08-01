@@ -1,0 +1,24 @@
+rules:
+  - id: eks-control-plane-logging-disabled
+    patterns:
+      - pattern: |
+          resource "aws_eks_cluster" $ANYTHING {
+            ...
+            enable_control_plane_logging = false  # Control plane logging is disabled
+            ...
+          }
+      - pattern-not: |
+          resource "aws_eks_cluster" $ANYTHING {
+            ...
+            enable_control_plane_logging = true  # Control plane logging is enabled
+            ...
+          }
+    message: "Ensure EKS clusters have control plane logging enabled."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Logging and Monitoring
+      resource: aws_eks_cluster
+      resource-type: EKS
+      reference_id: AWS.AEC.LM.MEDIUM.0071
+      version: 1

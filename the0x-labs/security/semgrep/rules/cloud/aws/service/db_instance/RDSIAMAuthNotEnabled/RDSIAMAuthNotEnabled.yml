@@ -1,0 +1,24 @@
+rules:
+  - id: rds-iam-auth-enabled
+    patterns:
+      - pattern: |
+          resource "aws_db_instance" $ANYTHING {
+            ...
+            iam_database_authentication_enabled = true 
+            ...
+          }
+      - pattern-not: |
+          resource "aws_db_instance" $ANYTHING {
+            ...
+            iam_database_authentication_enabled = false
+            ...
+          }
+    message: "Ensure that your RDS database has IAM Authentication enabled."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Data Protection
+      resource: aws_db_instance
+      resource-type: RDS
+      reference_id: AWS.RDS.DataSecurity.High.0577
+      version: 2

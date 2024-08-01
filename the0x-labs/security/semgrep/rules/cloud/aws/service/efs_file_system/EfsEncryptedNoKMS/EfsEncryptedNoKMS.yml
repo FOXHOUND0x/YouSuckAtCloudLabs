@@ -1,0 +1,26 @@
+rules:
+  - id: efs-encrypted-with-no-kms
+    patterns:
+      - pattern: |
+          resource "aws_efs_file_system" $ANYTHING {
+            ...
+            encrypted = true  # EFS encryption is enabled
+            kms_key_id = $KMS_KEY_ID  # KMS key specified
+            ...
+          }
+      - pattern-not: |
+          resource "aws_efs_file_system" $ANYTHING {
+            ...
+            encrypted = true  # EFS encryption is enabled
+            kms_key_id = null  # No KMS key specified, indicating no proper encryption
+            ...
+          }
+    message: "Ensure EFS file systems are encrypted with a KMS key."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Data Protection
+      resource: aws_efs_file_system
+      resource-type: EFS
+      reference_id: AWS.EFS.EncryptionandKeyManagement.High.0410
+      version: 2

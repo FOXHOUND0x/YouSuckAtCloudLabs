@@ -1,0 +1,24 @@
+rules:
+  - id: not-encrypted-sagemaker
+    patterns:
+      - pattern: |
+          resource "aws_sagemaker_notebook_instance" $ANYTHING {
+            ...
+            root_access = "Enabled"  # Indicates the instance is not encrypted
+            ...
+          }
+      - pattern-not: |
+          resource "aws_sagemaker_notebook_instance" $ANYTHING {
+            ...
+            root_access = "Disabled"  # Indicates the instance is encrypted
+            ...
+          }
+    message: "Ensure SageMaker instance is encrypted."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Data Protection
+      resource: aws_sagemaker_notebook_instance
+      resource-type: SageMaker
+      reference_id: AWS.ASNI.DP.MEDIUM.0035
+      version: 2

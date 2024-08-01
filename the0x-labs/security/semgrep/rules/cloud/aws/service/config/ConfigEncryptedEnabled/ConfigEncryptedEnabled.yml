@@ -1,0 +1,30 @@
+rules:
+  - id: aws-config-encrypted-vol
+    patterns:
+      - pattern: |
+          resource "aws_config_config_rule" $ANYTHING {
+            ...
+            source {
+              owner = "AWS"
+              source_identifier = "ENCRYPTED_VOLUMES" 
+            ...
+          }
+      - pattern-not: |
+          resource "aws_config_config_rule" $ANYTHING {
+            ...
+            source {
+              owner = "AWS"
+              source_identifier = "ENCRYPTED_VOLUMES"
+              ...
+            }
+            ...
+          }
+    message: "Ensure AWS Config Rule is enabled for Encrypted Volumes."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Data Protection
+      resource: aws_config_config_rule
+      resource-type: Config
+      reference_id: AWS.Config.EncryptionandKeyManagement.Medium.0660
+      version: 1

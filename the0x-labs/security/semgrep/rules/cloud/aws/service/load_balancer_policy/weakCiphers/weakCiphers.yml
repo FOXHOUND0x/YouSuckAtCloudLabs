@@ -1,0 +1,37 @@
+rules:
+  - id: elb-weak-cipher
+    patterns:
+      - pattern: |
+          resource "aws_load_balancer_policy" $ANYTHING {
+            ...
+            policy_name = $POLICY_NAME
+            ...
+            security_policy = [
+              $WEAK_CIPHER  # Weak ciphers specified
+            ]
+            ...
+          }
+      - pattern: |
+          resource "aws_load_balancer_policy" $ANYTHING {
+            ...
+            security_policy = $SECURITY_POLICY  # Generic security policy
+            ...
+          }
+      - pattern-not: |
+          resource "aws_load_balancer_policy" $ANYTHING {
+            ...
+            security_policy = [
+              "Protocol-TLSv1.2",  # Secure protocols specified
+              "Protocol-TLSv1.3"
+            ]
+            ...
+          }
+    message: "Remove insecure ciphers for your ELB security policy to reduce risks."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Infrastructure Security
+      resource: aws_load_balancer_policy
+      resource-type: ELB
+      reference_id: AWS.ELB.EncryptionandKeyManagement.High.0403
+      version: 2

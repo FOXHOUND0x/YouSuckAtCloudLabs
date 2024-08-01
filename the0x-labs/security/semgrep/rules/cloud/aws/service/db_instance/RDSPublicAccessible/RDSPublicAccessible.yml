@@ -1,0 +1,24 @@
+rules:
+  - id: rds-publicly-accessible
+    patterns:
+      - pattern: |
+          resource "aws_db_instance" $ANYTHING {
+            ...
+            publicly_accessible = true
+            ...
+          }
+      - pattern-not: |
+          resource "aws_db_instance" $ANYTHING {
+            ...
+            publicly_accessible = false
+            ...
+          }
+    message: "Ensure that RDS instances are not publicly accessible."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Infrastructure Security
+      resource: aws_db_instance
+      resource-type: RDS
+      reference_id: AWS.RDS.NS.High.0101
+      version: 2

@@ -1,0 +1,4 @@
+config:
+  aws:region: us-east-1
+  doppler:dopplerToken:
+    secure: AAABAP+DyCJtXp9+eLUN6aG+LFvNDOsbL7vjpUMF/E3orr9QXTaBF60/M5JveQZqv62gjXJRoDIVbmmkBVPXHBakcf+wzkfTJFJHdTsNqisXrO/vug==

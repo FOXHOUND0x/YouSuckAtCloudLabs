@@ -1,0 +1,24 @@
+{
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Federated": "arn:aws:iam::${upper(var.account_detail.id)}:saml-provider/Okta"
+        },
+        "Action": "sts:AssumeRoleWithSAML",
+        "Condition": {
+          "StringEquals": {
+            "SAML:aud": "https://signin.aws.amazon.com/saml"
+          }
+        }
+      },
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "arn:aws:iam::${upper(var.infra_account_id)}:user/Okta-AWS-SRE-Vault-Role-Assumption"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ],
+    "Version": "2012-10-17"
+  }

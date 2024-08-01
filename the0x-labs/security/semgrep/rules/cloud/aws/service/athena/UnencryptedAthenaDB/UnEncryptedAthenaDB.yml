@@ -1,0 +1,49 @@
+rules:
+  - id: aws-athena-encryption-enforced
+    patterns:
+      - pattern: |
+          resource "aws_athena_database" $ANYTHING {
+            ...
+            encryption_configuration {
+              encryption_option = "SSE_S3"
+              ...
+            }
+            ...
+          }
+      - pattern: |
+          resource "aws_athena_database" $ANYTHING {
+            ...
+            encryption_configuration {
+              encryption_option = "SSE_KMS"
+              ...
+            }
+            ...
+          }
+      - pattern: |
+          resource "aws_athena_database" $ANYTHING {
+            ...
+            encryption_configuration {
+              encryption_option = "CSE_KMS"
+              ...
+            }
+            ...
+          }
+    message: "Athena Database must be encrypted at rest using SSE_S3, SSE_KMS, or CSE_KMS"
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Data Protection
+      resource: aws_athena_database
+      resource-type: Athena
+      resource-category: Database
+      reference_id: AC_AWS_0468
+      version: 1
+    fix: |
+      # Ensure the encryption_configuration block is present and properly configured
+      resource "aws_athena_database" "example" {
+        ...
+        encryption_configuration {
+          encryption_option = "SSE_S3" # or "SSE_KMS" or "CSE_KMS"
+        }
+        ...
+      }

@@ -1,0 +1,167 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "DefaultPermit",
+          "Effect": "Allow",
+          "Action": ["*"],
+          "Resource": ["*"]
+      },
+      {
+          "Sid": "DisableBillingModification",
+          "Effect": "Deny",
+          "Action": [
+              "aws-portal:ModifyAccount",
+              "aws-portal:ModifyBilling",
+              "aws-portal:ModifyPaymentMethods",
+              "aws-portal:ViewBilling",
+              "aws-portal:ViewBudget",
+              "aws-portal:ViewPaymentMethods"
+          ],
+          "Resource": ["*"]
+      },
+      {
+          "Sid": "DisableCloudTrailModifications",
+          "Effect": "Deny",
+          "Action": [
+              "cloudtrail:CreateTrail",
+              "cloudtrail:DeleteTrail",
+              "cloudtrail:StartLogging",
+              "cloudtrail:StopLogging",
+              "cloudtrail:UpdateTrail"
+          ],
+          "Resource": ["*"]
+      },
+      {
+          "Sid": "DisableUserRoleModifications",
+          "Effect": "Deny",
+          "Action": [
+              "iam:Attach*",
+              "iam:Remove*",
+              "iam:Update*",
+              "iam:Deactivate*iam",
+              "iam:Detach*"
+          ],
+          "Resource": [
+              "arn:aws:iam::946611947052:policy/base-user-policies-*",
+              "arn:aws:iam::946611947052:role/ReadOnly-INFRA-RO",
+              "arn:aws:iam::946611947052:role/Developer-INFRA-RW",
+              "arn:aws:iam::946611947052:role/Developer-INFRA-RO",
+              "arn:aws:iam::946611947052:role/Operations-INFRA-RW",
+              "arn:aws:iam::946611947052:role/Security-INFRA-RW",
+              "arn:aws:iam::946611947052:role/Networking-INFRA-RW",
+              "arn:aws:iam::946611947052:role/SRE-INFRA-RW"
+          ]
+      },
+      {
+          "Sid": "DisableGovernanceTagModifications",
+          "Effect": "Deny",
+          "Action": [
+              "tag:addResourceTags",
+              "tag:removeResourceTags"
+          ],
+          "Resource": ["*"],
+          "Condition": {
+              "StringEquals": {
+                  "ec2:ResourceTag/security": "*",
+                  "ec2:ResourceTag/contact": "*",
+                  "ec2:ResourceTag/department": "*",
+                  "ec2:ResourceTag/service_id": "*",
+                  "ec2:ResourceTag/application": "*",
+                  "ec2:ResourceTag/applicationGroup": "*",
+                  "ec2:ResourceTag/registry_id": "*"
+              }
+          }
+      },
+      {
+          "Sid": "DisableCommonAndPublicNetworkModifications",
+          "Effect": "Deny",
+          "Action": [
+              "directconnect:*",
+              "ec2:AcceptVpcPeeringConnection",
+              "ec2:AssociateDhcpOptions",
+              "ec2:AssociateRouteTable",
+              "ec2:AttachInternetGateway",
+              "ec2:AttachVpnGateway",
+              "ec2:CreateCustomerGateway",
+              "ec2:CreateInternetGateway",
+              "ec2:CreateNetworkAcl",
+              "ec2:CreateNetworkAclEntry",
+              "ec2:CreateRoute",
+              "ec2:CreateRouteTable",
+              "ec2:CreateSubnet",
+              "ec2:CreateVpc",
+              "ec2:CreateVpcEndpoint",
+              "ec2:CreateVpcPeeringConnection",
+              "ec2:CreateVpnConnection",
+              "ec2:CreateVpnConnectionRoute",
+              "ec2:CreateVpnGateway",
+              "ec2:DeleteCustomerGateway",
+              "ec2:DeleteDhcpOptions",
+              "ec2:DeleteInternetGateway",
+              "ec2:DeleteNetworkAcl",
+              "ec2:DeleteNetworkAclEntry",
+              "ec2:DeleteRoute",
+              "ec2:DeleteRouteTable",
+              "ec2:DeleteSubnet",
+              "ec2:DeleteVpc",
+              "ec2:DeleteVpcEndpoints",
+              "ec2:DeleteVpcPeeringConnection",
+              "ec2:DeleteVpnConnection",
+              "ec2:DeleteVpnConnectionRoute",
+              "ec2:DeleteVpnGateway",
+              "ec2:DetachInternetGateway",
+              "ec2:DetachVpnGateway",
+              "ec2:DisableVgwRoutePropagation",
+              "ec2:DisassociateRouteTable",
+              "ec2:EnableVgwRoutePropagation",
+              "ec2:EnableVpcClassicLink",
+              "ec2:ModifySubnetAttribute",
+              "ec2:ModifyVpcAttribute",
+              "ec2:ModifyVpcEndpoint",
+              "ec2:RejectVpcPeeringConnection",
+              "ec2:ReplaceNetworkAclAssociation",
+              "ec2:ReplaceNetworkAclEntry",
+              "ec2:ReplaceRoute",
+              "ec2:ReplaceRouteTableAssociation",
+              "ec2:ResetNetworkInterfaceAttribute"
+          ],
+          "Resource": ["*"]
+      },
+      {
+          "Sid": "DisableModificationofOperationsAssets",
+          "Effect": "Deny",
+          "Action": [
+              "ec2:StartInstances",
+              "ec2:StopInstances",
+              "ec2:RebootInstances",
+              "ec2:TerminateInstances"
+          ],
+          "Resource": ["*"],
+          "Condition": {
+              "StringEquals": {
+                  "ec2:ResourceTag/department": "operations"
+              }
+          }
+      },
+      {
+          "Sid": "DisableAdministrativeFunctions",
+          "Effect": "Deny",
+          "Action": [
+              "route53domains:*",
+              "ds:*",
+              "ec2:PurchaseReservedInstancesOffering"
+          ],
+          "Resource": ["*"]
+      },
+      {
+          "Sid": "DisableBulkTransferMechanisms",
+          "Effect": "Deny",
+          "Action": [
+              "importexport:*",
+              "storagegateway:*"
+          ],
+          "Resource": ["*"]
+      }
+  ]
+}

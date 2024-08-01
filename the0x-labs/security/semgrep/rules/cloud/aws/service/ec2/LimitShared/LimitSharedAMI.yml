@@ -1,0 +1,25 @@
+rules:
+  - id: aws-ami-not-encrypted
+    patterns:
+      - pattern: |
+          resource "aws_ami" $ANYTHING {
+            ...
+            encrypted = false
+            ...
+          }
+      - pattern-not: |
+          resource "aws_ami" $ANYTHING {
+            ...
+            encrypted = true
+            ...
+          }
+    message: "The AMI should not be shared with other accounts"
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Infrastructure Security
+      resource: aws_ami_launch_permission
+      resource-type: EC2
+      resource-category: Compute
+      reference_id: AC_AWS_0006
+      version: 1

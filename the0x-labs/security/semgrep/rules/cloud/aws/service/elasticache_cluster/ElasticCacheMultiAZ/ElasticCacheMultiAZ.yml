@@ -1,0 +1,24 @@
+rules:
+  - id: elasticache-multi-az
+    patterns:
+      - pattern: |
+          resource "aws_elasticache_cluster" $ANYTHING {
+            ...
+            cluster_mode = "single-node"  # Single node configuration
+            ...
+          }
+      - pattern-not: |
+          resource "aws_elasticache_cluster" $ANYTHING {
+            ...
+            cluster_mode = "multi-node"  # Multi-AZ configuration
+            ...
+          }
+    message: "Ensure that AWS ElastiCache clusters are configured for Multi-AZ."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Resilience
+      resource: aws_elasticache_cluster
+      resource-type: ElastiCache
+      reference_id: AWS.ElastiCache.HighAvailability.Medium.0757
+      version: 1

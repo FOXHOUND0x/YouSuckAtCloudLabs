@@ -1,0 +1,30 @@
+rules:
+  - id: aws-mq-logging-enabled
+    patterns:
+      - pattern: |
+          resource "aws_mq_broker" $ANYTHING {
+            ...
+            logs {
+              general = true  # General logging is enabled
+              ...
+            }
+            ...
+          }
+      - pattern-not: |
+          resource "aws_mq_broker" $ANYTHING {
+            ...
+            logs {
+              general = false  # General logging is disabled
+              ...
+            }
+            ...
+          }
+    message: "Enable AWS MQ log exports."
+    severity: LOW
+    languages: [terraform]
+    metadata:
+      domain: Logging and Monitoring
+      resource: aws_mq_broker
+      resource-type: MQ
+      reference_id: AWS.ElasticSearch.Logging.Medium.0885
+      version: 1

@@ -1,0 +1,32 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sso:*",
+                "identitystore:*",
+                "organizations:DescribeAccount",
+                "organizations:DescribeOrganization",
+                "organizations:ListAccounts",
+                "organizations:ListTagsForResource",
+                "iam:GetSAMLProvider",
+                "iam:ListSAMLProviders",
+                "ds:DescribeDirectories",
+                "ds:DescribeTrusts",
+                "access-analyzer:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:CreateServiceLinkedRole",
+            "Resource": "arn:aws:iam::*:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+            "Condition": {
+                "StringLike": {
+                    "iam:AWSServiceName": "sso.amazonaws.com"
+                }
+            }
+        }
+    ]
+}

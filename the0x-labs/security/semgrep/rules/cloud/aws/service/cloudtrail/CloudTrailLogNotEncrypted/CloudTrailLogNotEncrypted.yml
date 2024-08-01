@@ -1,0 +1,26 @@
+rules:
+  - id: cloudtrail-log-not-encrypted
+    patterns:
+      - pattern: |
+          resource "aws_cloudtrail" $ANYTHING {
+            ...
+            kms_key_id = $KMS_KEY_ID
+            ...
+          }
+      - pattern-not: |
+          resource "aws_cloudtrail" $ANYTHING {
+            ...
+            enable_log_file_validation = true
+            ...
+            kms_key_id = null  # Not using KMS for encryption
+            ...
+          }
+    message: "Ensure CloudTrail logs are encrypted using KMS."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Logging and Monitoring
+      resource: aws_cloudtrail
+      resource-type: CloudTrail
+      reference_id: AWS.CloudTrail.Logging.High.0399
+      version: 2

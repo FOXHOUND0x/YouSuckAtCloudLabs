@@ -1,0 +1,24 @@
+rules:
+  - id: at-rest-not-encrypted-elastic-cache
+    patterns:
+      - pattern: |
+          resource "aws_elasticache_replication_group" $ANYTHING {
+            ...
+            at_rest_encryption_enabled = true  # Encryption at rest is enabled
+            ...
+          }
+      - pattern-not: |
+          resource "aws_elasticache_replication_group" $ANYTHING {
+            ...
+            at_rest_encryption_enabled = false  # Encryption at rest is disabled
+            ...
+          }
+    message: "Ensure Elastic Cache Replication Group is encrypted at rest."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Data Protection
+      resource: aws_elasticache_replication_group
+      resource-type: ElastiCache
+      reference_id: AWS.AERG.DP.MEDIUM.0027
+      version: 2

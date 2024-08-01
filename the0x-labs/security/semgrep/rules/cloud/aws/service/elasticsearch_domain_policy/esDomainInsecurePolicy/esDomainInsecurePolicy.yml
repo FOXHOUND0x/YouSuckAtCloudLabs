@@ -1,0 +1,44 @@
+rules:
+  - id: es-domain-insecure-policy
+    patterns:
+      - pattern: |
+          resource "aws_elasticsearch_domain_policy" $ANYTHING {
+            ...
+            policy = jsonencode({
+              Version = "2012-10-17"
+              Statement = [
+                {
+                  Effect = "Allow"
+                  Principal = "*"
+                  Action = "es:*"
+                  Resource = "*"
+                }
+              ]
+            })  # Wildcard policy is attached
+            ...
+          }
+      - pattern: |
+          resource "aws_elasticsearch_domain_policy" $ANYTHING {
+            ...
+            policy = jsonencode({
+              Version = "2012-10-17"
+              Statement = [
+                {
+                  Effect = "Allow"
+                  Principal = "*"
+                  Action = "es:*"
+                  Resource = $RESOURCE  # Wildcard resource
+                }
+              ]
+            })
+            ...
+          }
+    message: "Ensure Elasticsearch domains do not have wildcard policies."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Identity and Access Management
+      resource: aws_elasticsearch_domain_policy
+      resource-type: Elasticsearch
+      reference_id: AWS.AEDP.IAM.HIGH.0060
+      version: 1

@@ -1,0 +1,28 @@
+rules:
+  - id: dynamodb-encrypted
+    patterns:
+      - pattern: |
+          resource "aws_dynamodb_table" $ANYTHING {
+            ...
+            server_side_encryption {
+              enabled = true
+            }
+            ...
+          }
+      - pattern-not: |
+          resource "aws_dynamodb_table" $ANYTHING {
+            ...
+            server_side_encryption {
+              enabled = false
+            }
+            ...
+          }
+    message: "Ensure DynamoDB is encrypted at rest."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Data Protection
+      resource: aws_dynamodb_table
+      resource-type: DynamoDB
+      reference_id: AWS.ADT.DP.MEDIUM.0025
+      version: 2

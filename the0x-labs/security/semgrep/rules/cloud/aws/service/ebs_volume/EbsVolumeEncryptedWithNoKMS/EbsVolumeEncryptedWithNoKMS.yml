@@ -1,0 +1,32 @@
+rules:
+  - id: ebs-volume-encrypted-with-no-kms
+    patterns:
+      - pattern: |
+          resource "aws_ebs_volume" $ANYTHING {
+            ...
+            encrypted = true
+            kms_key_id = null
+            ...
+          }
+      - pattern: |
+          resource "aws_ebs_volume" $ANYTHING {
+            ...
+            encrypted = true
+            kms_key_id = $KMS_KEY_ID
+            ...
+          }
+      - pattern-not: |
+          resource "aws_ebs_volume" $ANYTHING {
+            ...
+            encrypted = false
+            ...
+          }
+    message: "Ensure that AWS EBS volumes are encrypted with a KMS key."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Data Protection
+      resource: aws_ebs_volume
+      resource-type: EBS
+      reference_id: AWS.EcsCluster.EncryptionandKeyManagement.High.0413
+      version: 2

@@ -1,0 +1,45 @@
+rules:
+  - id: aws-sqs-queue-public-access
+    pattern-either:
+      - pattern: |
+          resource "aws_sqs_queue_policy" "..." {
+            ...
+            policy = jsonencode({
+              ...
+              Statement = [
+                {
+                  ...
+                  Principal = "*"
+                  ...
+                }
+              ]
+              ...
+            })
+            ...
+          }
+      - pattern: |
+          resource "aws_sqs_queue_policy" "..." {
+            ...
+            policy = jsonencode({
+              ...
+              Statement = [
+                {
+                  ...
+                  Principal = {
+                    AWS = "*"
+                  }
+                  ...
+                }
+              ]
+              ...
+            })
+            ...
+          }
+    message: "Potentially publicly accessible SQS queue detected. Ensure this is intended and properly secured."
+    severity: WARNING
+    languages: [hcl]
+    metadata:
+      category: security
+      technology:
+        - terraform
+        - aws

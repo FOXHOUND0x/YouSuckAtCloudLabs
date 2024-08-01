@@ -1,0 +1,30 @@
+rules:
+  - id: root-user-not-contain-mfa-type-hardware
+    patterns:
+      - pattern: |
+          resource "aws_iam_user" "root" {
+            ...
+            mfa_devices = $MFA_DEVICES  # MFA devices attached to the root user
+            ...
+          }
+      - pattern: |
+          resource "aws_iam_virtual_mfa_device" $ANYTHING {
+            ...
+            serial_number = $SERIAL_NUMBER  # Serial number for the MFA device
+            ...
+          }
+      - pattern-not: |
+          resource "aws_iam_virtual_mfa_device" $ANYTHING {
+            ...
+            type = "hardware"  # Hardware MFA device is not enabled
+            ...
+          }
+    message: "Ensure Hardware MFA device is enabled for the 'root' account."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Compliance Validation
+      resource: aws_iam_user
+      resource-type: IAM
+      reference_id: AWS.IamUser.IAM.High.0387
+      version: 1

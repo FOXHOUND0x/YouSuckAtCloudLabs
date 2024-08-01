@@ -1,0 +1,41 @@
+rules:
+  - id: elb-ssl-tls-protocol
+    patterns:
+      - pattern: |
+          resource "aws_load_balancer_policy" $ANYTHING {
+            ...
+            policy_name = $POLICY_NAME
+            ...
+            # Insecure protocols specified
+            security_policy = [
+              "Protocol-SSLv3",
+              "Protocol-TLSv1"
+            ]
+            ...
+          }
+      - pattern: |
+          resource "aws_load_balancer_policy" $ANYTHING {
+            ...
+            policy_name = $POLICY_NAME
+            ...
+            security_policy = $SECURITY_POLICY  # Generic security policy
+            ...
+          }
+      - pattern-not: |
+          resource "aws_load_balancer_policy" $ANYTHING {
+            ...
+            security_policy = [
+              "Protocol-TLSv1.2",
+              "Protocol-TLSv1.3"
+            ]  # Secure protocols specified
+            ...
+          }
+    message: "Ensure that ELB is not using insecure protocols like SSLv3 or TLSv1."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Infrastructure Security
+      resource: aws_load_balancer_policy
+      resource-type: ELB
+      reference_id: AWS.ELB.EncryptionandKeyManagement.High.0401
+      version: 2

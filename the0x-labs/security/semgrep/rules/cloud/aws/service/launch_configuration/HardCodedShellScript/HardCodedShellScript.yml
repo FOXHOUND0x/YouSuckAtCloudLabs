@@ -1,0 +1,27 @@
+rules:
+  - id: hard-coded-shell-script
+    patterns:
+      - pattern: |
+          resource "aws_launch_configuration" $ANYTHING {
+            ...
+            user_data = base64decode("...")  # Base64 encoded shell script
+            ...
+          }
+      - pattern: |
+          resource "aws_launch_configuration" $ANYTHING {
+            ...
+            user_data = <<EOF
+            #!/bin/bash
+            echo "This is a script"
+            EOF
+            ...
+          }
+    message: "Avoid using base64 encoded shell scripts as part of the configuration."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Data Protection
+      resource: aws_launch_configuration
+      resource-type: EC2
+      reference_id: AWS.LaunchConfiguration.DataSecurity.High.0101
+      version: 1

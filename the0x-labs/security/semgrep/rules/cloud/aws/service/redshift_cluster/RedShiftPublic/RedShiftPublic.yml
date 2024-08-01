@@ -1,0 +1,24 @@
+rules:
+  - id: redshift-public-access
+    patterns:
+      - pattern: |
+          resource "aws_redshift_cluster" $ANYTHING {
+            ...
+            publicly_accessible = true  # Redshift cluster is publicly accessible
+            ...
+          }
+      - pattern-not: |
+          resource "aws_redshift_cluster" $ANYTHING {
+            ...
+            publicly_accessible = false  # Redshift cluster is not publicly accessible
+            ...
+          }
+    message: "Ensure Redshift clusters are not publicly accessible to minimize security risks."
+    severity: HIGH
+    languages: [terraform]
+    metadata:
+      domain: Infrastructure Security
+      resource: aws_redshift_cluster
+      resource-type: Redshift
+      reference_id: AWS.Redshift.NetworkSecurity.HIGH.0564
+      version: 2

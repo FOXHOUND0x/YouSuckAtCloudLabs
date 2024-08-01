@@ -1,0 +1,24 @@
+rules:
+  - id: cloudtrail-log-validation-disabled
+    patterns:
+      - pattern: |
+          resource "aws_cloudtrail" $ANYTHING {
+            ...
+            enable_log_file_validation = false
+            ...
+          }
+      - pattern-not: |
+          resource "aws_cloudtrail" $ANYTHING {
+            ...
+            enable_log_file_validation = true 
+            ...
+          }
+    message: "Ensure CloudTrail has log file validation enabled."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Logging and Monitoring
+      resource: aws_cloudtrail
+      resource-type: CloudTrail
+      reference_id: AWS.CloudTrail.LM.MEDIUM.0087
+      version: 1

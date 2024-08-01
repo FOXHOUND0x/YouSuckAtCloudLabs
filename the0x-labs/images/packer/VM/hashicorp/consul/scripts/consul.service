@@ -1,0 +1,33 @@
+[Unit]
+Description="HashiCorp Consul - A tool for service discovery, monitoring and configuration"
+Documentation=https://www.consul.io/
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+User=consul
+Group=consul
+ExecStart=/usr/local/bin/consul agent -config-dir=/opt/consul/config
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=65536
+LimitNPROC=65536
+TasksMax=infinity
+
+# Security options
+ProtectSystem=full
+ProtectHome=read-only
+PrivateTmp=yes
+PrivateDevices=yes
+NoNewPrivileges=yes
+
+DevicePolicy=closed
+IPAddressDeny=any
+IPAddressAllow=127.0.0.1
+IPAddressAllow=::1
+
+[Install]
+WantedBy=multi-user.target

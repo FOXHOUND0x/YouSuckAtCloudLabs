@@ -1,7 +1,0 @@
-name: iam-manager
-runtime: go
-description: A minimal AWS Go Pulumi program
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: ""

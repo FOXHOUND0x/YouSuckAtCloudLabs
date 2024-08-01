@@ -1,0 +1,36 @@
+rules:
+  - id: target-group-using-http
+    patterns:
+      - pattern: |
+          resource "aws_lb_target_group" $ANYTHING {
+            ...
+            health_check {
+              protocol = "HTTP"  # Health check using HTTP
+              ...
+            }
+            ...
+          }
+      - pattern: |
+          resource "aws_lb_target_group" $ANYTHING {
+            ...
+            protocol = "HTTP"  # Target group using HTTP
+            ...
+          }
+      - pattern-not: |
+          resource "aws_lb_target_group" $ANYTHING {
+            ...
+            health_check {
+              protocol = "HTTPS"  # Health check using HTTPS
+              ...
+            }
+            ...
+          }
+    message: "Ensure target groups use HTTPS to ensure end-to-end encryption."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Infrastructure Security
+      resource: aws_lb_target_group
+      resource-type: Load Balancer
+      reference_id: AWS.ALTG.IS.MEDIUM.0042
+      version: 2

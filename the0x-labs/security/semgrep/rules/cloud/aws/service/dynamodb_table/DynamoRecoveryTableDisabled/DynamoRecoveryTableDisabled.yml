@@ -1,0 +1,28 @@
+rules:
+  - id: dynamodb-recovery-enabled
+    patterns:
+      - pattern: |
+          resource "aws_dynamodb_table" $ANYTHING {
+            ...
+            point_in_time_recovery {
+             enabled = true
+            }
+            ...
+          }
+      - pattern-not: |
+          resource "aws_dynamodb_table" $ANYTHING {
+            ...
+            point_in_time_recovery {
+             enabled = false
+            }
+            ...
+          }
+    message: "Ensure Point In Time Recovery is enabled for DynamoDB tables."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Resilience
+      resource: aws_dynamodb_table
+      resource-type: DynamoDB
+      reference_id: AWS.DynamoDb.Logging.Medium.007
+      version: 2

@@ -1,0 +1,30 @@
+rules:
+  - id: programmatic-access-creation
+    patterns:
+      - pattern: |
+          resource "aws_iam_access_key" $ANYTHING {
+            ...
+            user = $USER  # Access key associated with a user
+            ...
+          }
+      - pattern: |
+          resource "aws_iam_access_key" $ANYTHING {
+            ...
+            user = "root"  # Access key associated with the root account
+            ...
+          }
+      - pattern: |
+          resource "aws_iam_user" $ANYTHING {
+            ...
+            access_key = $KEY  # Access key created for the user
+            ...
+          }
+    message: "Ensure that there are no exposed Amazon IAM access keys to protect your AWS resources."
+    severity: MEDIUM
+    languages: [terraform]
+    metadata:
+      domain: Identity and Access Management
+      resource: aws_iam_access_key
+      resource-type: IAM
+      reference_id: AWS.IamUser.IAM.High.0391
+      version: 2
