@@ -18,8 +18,8 @@ build {
   post-processors {
 
     post-processor "docker-tag" {
-      repository = "unit34/nexus34"
-      tag        = ["consul"]
+      repository = "ghcr.io/the0xsec/consul"
+      tag        = ["consul/latest"]
     }
 
     post-processor "docker-push" {}
