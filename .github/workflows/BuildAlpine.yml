@@ -1,0 +1,35 @@
+name: Build Alpine
+
+on:
+  push:
+    paths:
+      - "the0x-labs/images/packer/containers/alpine.pkr.hcl"
+  workflow_dispatch:
+
+permissions:
+  packages: write
+  contents: read
+
+env:
+  working-directory: the0x-labs/images/packer/containers/
+
+jobs:
+  packer:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install Packer
+      run: |
+        wget https://releases.hashicorp.com/packer/1.7.4/packer_1.7.4_linux_amd64.zip
+        unzip packer_1.7.4_linux_amd64.zip
+        sudo mv packer /usr/local/bin/packer
+        packer --version
+
+    - name: Build Docker Image
+      id: build-image
+      run: |
+        packer build alpine.pkr.hcl
+
