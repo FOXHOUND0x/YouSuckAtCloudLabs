@@ -1,4 +1,4 @@
-name: Ragnar
+name: Ragnar App
 
 on:
   pull_request:

@@ -1,4 +1,4 @@
-name: Inspector
+name: AWS Inspector Configuration
 
 on:
   pull_request:

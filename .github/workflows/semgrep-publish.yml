@@ -1,4 +1,4 @@
-name: semgrep-publish-rules
+name: Publish Semgrep Rules
 
 on:
   push:

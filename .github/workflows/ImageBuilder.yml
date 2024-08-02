@@ -1,4 +1,4 @@
-name: ImageBuilder
+name: VM Image Builder
 
 on:
   pull_request:

@@ -1,4 +1,4 @@
-name: securityhub
+name: SecurityHub Configuration
 
 on:
   pull_request:

@@ -1,4 +1,4 @@
-name: Organizations
+name: AWS Organizations Configuration
 
 on:
   pull_request:
