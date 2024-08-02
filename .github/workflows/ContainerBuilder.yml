@@ -4,11 +4,6 @@ on:
   pull_request:
     paths:
       - "/the0x-labs/images/packer/containers/**/*"
-  push:
-    branches:
-      - main
-    paths:
-      - "the0x-labs/images/packer/containers/**/*"
 
 permissions:
   packages: write
