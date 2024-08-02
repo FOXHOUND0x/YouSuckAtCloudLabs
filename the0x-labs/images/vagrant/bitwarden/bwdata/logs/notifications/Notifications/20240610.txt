@@ -1,3 +1,0 @@
-2024-06-10 19:08:50.412 +00:00 [Warning] Storing keys in a directory '"/home/bitwarden/.aspnet/DataProtection-Keys"' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
-2024-06-10 19:08:50.670 +00:00 [Warning] No XML encryptor configured. Key {ed5a1ba7-7744-410e-975c-f4522ec5958f} may be persisted to storage in unencrypted form.
-2024-06-10 19:08:50.809 +00:00 [Warning] Overriding HTTP_PORTS '"8080"' and HTTPS_PORTS '""'. Binding to values defined by URLS instead '"http://+:5000"'.
