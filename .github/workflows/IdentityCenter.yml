@@ -1,4 +1,4 @@
-name: Inspector
+name: Identity Center
 
 on:
   pull_request:
