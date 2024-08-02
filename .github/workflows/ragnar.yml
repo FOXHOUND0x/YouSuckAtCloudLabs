@@ -1,6 +1,9 @@
 name: Ragnar
 
-on: [pull_request]
+on:
+  pull_request:
+    paths:
+      "/the0x-labs/cloud-providers/aws/ragnar/infra/**"
 
 env:
   tf_actions_working_dir: "the0x-labs/cloud-providers/aws/ragnar/infra/"
@@ -42,6 +45,11 @@ jobs:
       id: plan
       run: terraform plan -no-color
       continue-on-error: true
+
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply -auto-approve
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     - name: Post comment on PR
       uses: actions/github-script@v7
