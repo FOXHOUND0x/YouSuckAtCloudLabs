@@ -3,7 +3,7 @@ name: Build Alpine
 on:
   push:
     paths:
-      - "the0x-labs/images/packer/containers/alpine.pkr.hcl"
+      - "the0x-labs/images/packer/containers/"
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 env:
-  working-directory: the0x-labs/images/packer/containers/
+  working-directory: the0x-labs/images/packer/containers
 
 jobs:
   packer:
