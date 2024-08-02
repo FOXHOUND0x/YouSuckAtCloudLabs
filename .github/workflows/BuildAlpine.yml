@@ -25,8 +25,13 @@ jobs:
         sudo mv packer /usr/local/bin/packer
         packer --version
 
-    - name: Build Docker Image
-      id: build-image
+    - name: Packer Initialize
+      id: packer-init
       run: |
-        packer build ./the0x-labs/images/packer/containers/alpine.pkr.hcl
+        packer init the0x-labs/images/packer/containers/alpine.pkr.hcl
+
+    - name: Packer Build
+      id: packer-build
+      run: |
+        packer build the0x-labs/images/packer/containers/alpine.pkr.hcl
 
