@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "/the0x-labs/images/packer/containers/**/*"
+  workflow_dispatch:
 
 permissions:
   packages: write
