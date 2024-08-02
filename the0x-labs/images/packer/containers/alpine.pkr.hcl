@@ -18,7 +18,7 @@ build {
   post-processors {
     post-processor "docker-tag" {
       repository = "ghcr.io/the0xsec/alpine"
-      tag        = ["alpine"]
+      tag        = ["alpine/latest"]
     }
 
     post-processor "docker-push" {}
