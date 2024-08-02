@@ -1,0 +1,70 @@
+name: ContainerBuilder
+
+on:
+  pull_request:
+    paths:
+      - "/the0x-labs/images/packer/containers/**"
+  push:
+    branches:
+      - main
+    paths:
+      - "/the0x-labs/images/packer/containers/**"
+
+permissions:
+  packages: write
+  contents: read
+
+jobs:
+  packer:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Get list of changed files
+      id: changed-files
+      run: |
+        git fetch origin ${{ github.event.before }} --depth=1
+        git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed_files.txt
+        cat changed_files.txt
+
+    - name: Filter image files
+      id: filter-images
+      run: |
+        grep '/the0x-labs/images/' changed_files.txt > image_files.txt
+        cat image_files.txt
+
+    - name: Install Packer
+      if: steps.filter-images.outputs.image_files != ''
+      run: |
+        wget https://releases.hashicorp.com/packer/1.7.4/packer_1.7.4_linux_amd64.zip
+        unzip packer_1.7.4_linux_amd64.zip
+        sudo mv packer /usr/local/bin/packer
+        packer --version
+
+    - name: Build Docker Image
+      if: steps.filter-images.outputs.image_files != ''
+      id: build-image
+      run: |
+        packer build image.pkr.hcl | tee output.log
+
+    - name: Log in to GHCR
+      if: steps.filter-images.outputs.image_files != ''
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+    - name: Tag and Push Docker Image
+      if: steps.filter-images.outputs.image_files != ''
+      run: |
+        IMAGE_NAME="ghcr.io/${{ github.repository_owner }}/my-image:latest"
+        docker tag ubuntu:20.04 $IMAGE_NAME
+        docker push $IMAGE_NAME
+
+    - name: Run Trivy Scan
+      if: steps.filter-images.outputs.image_files != ''
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: ghcr.io/${{ github.repository_owner }}/my-image:latest
+        format: json
+        output: trivy-report.json
+
