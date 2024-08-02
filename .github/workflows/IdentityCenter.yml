@@ -1,4 +1,4 @@
-name: Identity Center
+name: Identity-Center-Infrastructure
 
 on:
   pull_request:
