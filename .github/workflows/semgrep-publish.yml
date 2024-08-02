@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'semgrep/rules/**'
+      - '/the0x-labs/security/semgrep/rules/**'
   workflow_dispatch:
 
 concurrency:
