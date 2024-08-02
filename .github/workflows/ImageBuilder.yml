@@ -3,12 +3,12 @@ name: ImageBuilder
 on:
   pull_request:
     paths:
-      - "/the0x-labs/images/packer/VM/**"
+      - "the0x-labs/images/packer/VM/**"
   push:
     branches:
       - main
     paths:
-      - "/the0x-labs/images/packer/VM/**"
+      - "the0x-labs/images/packer/VM/**"
 
 permissions:
   pull-requests: write
