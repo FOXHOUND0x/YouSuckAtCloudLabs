@@ -10,9 +10,6 @@ permissions:
   packages: write
   contents: read
 
-env:
-  working-directory: the0x-labs/images/packer/containers
-
 jobs:
   packer:
     runs-on: ubuntu-latest
@@ -31,5 +28,5 @@ jobs:
     - name: Build Docker Image
       id: build-image
       run: |
-        packer build alpine.pkr.hcl
+        packer build ./the0x-labs/images/packer/containers/alpine.pkr.hcl
 
