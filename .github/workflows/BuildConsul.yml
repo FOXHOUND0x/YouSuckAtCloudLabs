@@ -1,9 +1,9 @@
-name: Build Alpine
+name: Build Consul
 
 on:
   push:
     paths:
-      - "the0x-labs/images/packer/containers/alpine.pkr.hcl"
+      - "the0x-labs/images/packer/containers/consul.pkr.hcl"
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  build-alpine:
+  build-consul:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,10 +28,10 @@ jobs:
     - name: Packer Initialize
       id: packer-init
       run: |
-        packer init the0x-labs/images/packer/containers/alpine.pkr.hcl
+        packer init the0x-labs/images/packer/containers/consul.pkr.hcl
 
     - name: Packer Build
       id: packer-build
       run: |
-        packer build the0x-labs/images/packer/containers/alpine.pkr.hcl
+        packer build the0x-labs/images/packer/containers/consul.pkr.hcl
 
