@@ -1,9 +1,9 @@
-name: Build Alpine
+name: Build SemGrep
 
 on:
   push:
     paths:
-      - "the0x-labs/images/packer/containers/alpine.pkr.hcl"
+      - "the0x-labs/images/packer/containers/semgrep.pkr.hcl"
   workflow_dispatch:
 
 permissions:
@@ -28,10 +28,10 @@ jobs:
     - name: Packer Initialize
       id: packer-init
       run: |
-        packer init the0x-labs/images/packer/containers/alpine.pkr.hcl
+        packer init the0x-labs/images/packer/containers/semgrep.pkr.hcl
 
     - name: Packer Build
       id: packer-build
       run: |
-        packer build the0x-labs/images/packer/containers/alpine.pkr.hcl
+        packer build the0x-labs/images/packer/containers/semgrep.pkr.hcl
 
