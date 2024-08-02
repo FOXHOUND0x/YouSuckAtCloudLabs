@@ -16,9 +16,8 @@ build {
   sources = ["source.docker.alpine"]
 
   post-processors {
-
     post-processor "docker-tag" {
-      repository = "unit34/nexus34"
+      repository = "ghcr.io/the0xsec/alpine"
       tag        = ["alpine"]
     }
 
