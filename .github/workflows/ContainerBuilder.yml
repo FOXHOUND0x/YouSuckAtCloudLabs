@@ -1,9 +1,9 @@
 name: ContainerBuilder
 
 on:
-  pull_request:
+  push:
     paths:
-      - "/the0x-labs/images/packer/containers/**/*"
+      - "the0x-labs/images/packer/containers/**/*"
   workflow_dispatch:
 
 permissions:
@@ -28,7 +28,7 @@ jobs:
     - name: Filter image files
       id: filter-images
       run: |
-        grep '/the0x-labs/images/' changed_files.txt > image_files.txt
+        grep '/the0x-labs/images/packer/' changed_files.txt > image_files.txt
         cat image_files.txt
 
     - name: Install Packer
