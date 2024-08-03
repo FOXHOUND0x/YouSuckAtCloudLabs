@@ -1,32 +1,30 @@
-# resource "aws_api_gateway_rest_api" "ragnar_api" {
-#     name = "ragnar-api"
-# }
+resource "aws_apigatewayv2_api" "ragnar_api" {
+  name = "ragnar-api"
+  protocol_type = "HTTP"
+}
 
-# resource "aws_api_gateway_resource" "ragnar_resource" {
-#     rest_api_id = aws_api_gateway_rest_api.ragnar_api.id
-#     parent_id = aws_api_gateway_rest_api.ragnar_api.root_resource_id
-#     path_part = "ragnar"
-# }
+resource "aws_apigatewayv2_stage" "ragnar_stage" {
+  api_id = aws_apigatewayv2_api.ragnar_api.id
+  name = "ragnar-stage"
+  auto_deploy = true
+}
 
-# resource "aws_api_gateway_method" "ragnar_method" {
-#     rest_api_id = aws_api_gateway_rest_api.ragnar_api.id
-#     resource_id = aws_api_gateway_resource.ragnar_resource.id
-#     http_method = "POST"
-#     authorization = "NONE"
-# }
+resource "aws_apigatewayv2_domain_name" "ragnar_domain" {
+    depends_on = [ aws_acm_certificate.ragnar_cert ]
+    
+    domain_name = "ragnar.the0x.dev"
+    
+    domain_name_configuration {
+    certificate_arn = aws_acm_certificate.ragnar_cert.arn
+    endpoint_type = "REGIONAL"
+    security_policy = "TLS_1_2"
+  }
+}
 
-# resource "aws_api_gateway_integration" "ragnar_integration" {
-#     rest_api_id = aws_api_gateway_rest_api.ragnar_api.id
-#     resource_id = aws_api_gateway_resource.ragnar_resource.id
-#     http_method = aws_api_gateway_method.ragnar_method.http_method
-#     integration_http_method = "POST"
-#     type = "AWS_PROXY"
-#     uri = aws_lambda_function.ragnar_lambda.invoke_arn
-# }
-
-# resource "aws_api_gateway_deployment" "ragnar_deployment" {
-#     depends_on = [aws_api_gateway_integration.ragnar_integration]
-#     rest_api_id = aws_api_gateway_rest_api.ragnar_api.id
-#     stage_name = "dev"
-# }
-
+resource "aws_apigatewayv2_api_mapping" "ragnar_mapping" {
+    depends_on = [ aws_apigatewayv2_domain_name.ragnar_domain ]
+    
+    api_id = aws_apigatewayv2_api.ragnar_api.id
+    domain_name = aws_apigatewayv2_domain_name.ragnar_domain.domain_name
+    stage = aws_apigatewayv2_stage.ragnar_stage.name
+}
