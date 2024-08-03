@@ -64,3 +64,5 @@ the0x-labs/security/doppler-rotation/.terraform/providers/registry.terraform.io/
 *.backup
 
 *.json
+
+the0x-labs/builds/vagrant/bitwarden/bwdata/core/aspnet-dataprotection/
