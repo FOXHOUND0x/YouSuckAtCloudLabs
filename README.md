@@ -1,4 +1,6 @@
 ### The0x-labs
 
-Is a series of real-world cloud projects that I find interesting. I am putting this all in a single mono-repo b/c I don't feel like managing a bunch of random stuff. 
+This repo has been de-centralized to provide a bit more granular approach to making videos for demonstrations. You can find what you're looking for by searching 'HiveNet-<topic>' in my profile.
+
+thanks
 
