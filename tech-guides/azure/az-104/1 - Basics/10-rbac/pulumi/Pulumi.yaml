@@ -1,7 +1,0 @@
-name: 10-rbac
-runtime: go
-description: A minimal Azure Native Go Pulumi program
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: azure-go

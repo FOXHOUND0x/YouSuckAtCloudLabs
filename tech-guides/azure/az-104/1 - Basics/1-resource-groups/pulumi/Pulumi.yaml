@@ -1,7 +1,0 @@
-name: resource-groups
-runtime: go
-description: A small lab to demonstrate the concept of resource Groups
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: azure-go
