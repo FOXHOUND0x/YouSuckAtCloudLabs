@@ -1,12 +1,25 @@
 module ragnar
 
-go 1.21
+go 1.21.12
 
 toolchain go1.22.4
 
 require (
-	github.com/pulumi/pulumi-aws/sdk/v6 v6.37.1
+	github.com/pulumi/pulumi-aws/sdk/v6 v6.48.0
 	github.com/pulumi/pulumi/sdk/v3 v3.126.0
+)
+
+require (
+	github.com/gofrs/flock v0.7.1 // indirect
+	github.com/golang/protobuf v1.5.4 // indirect
+	github.com/mitchellh/go-homedir v1.1.0 // indirect
+	github.com/pulumi/pulumi-aws/sdk v1.31.0 // indirect
+	github.com/pulumi/pulumi/sdk v1.13.1 // indirect
+	github.com/src-d/gcfg v1.4.0 // indirect
+	gopkg.in/src-d/go-billy.v4 v4.3.2 // indirect
+	gopkg.in/src-d/go-git.v4 v4.13.1 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
+	sourcegraph.com/sourcegraph/appdash v0.0.0-20190731080439-ebfcffb1b5c0 // indirect
 )
 
 require (
@@ -44,7 +57,7 @@ require (
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
-	github.com/mattn/go-isatty v0.0.19 // indirect
+	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-localereader v0.0.1 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
 	github.com/mitchellh/go-ps v1.0.0 // indirect
@@ -65,12 +78,12 @@ require (
 	github.com/pulumi/pulumi-cloudflare/sdk/v4 v4.16.0 // indirect
 	github.com/pulumi/pulumi-cloudflare/sdk/v5 v5.35.1 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
-	github.com/rogpeppe/go-internal v1.11.0 // indirect
+	github.com/rogpeppe/go-internal v1.12.0 // indirect
 	github.com/sabhiram/go-gitignore v0.0.0-20210923224102-525f6e181f06 // indirect
 	github.com/santhosh-tekuri/jsonschema/v5 v5.0.0 // indirect
 	github.com/sergi/go-diff v1.3.2-0.20230802210424-5b0b94c5c0d3 // indirect
 	github.com/skeema/knownhosts v1.2.2 // indirect
-	github.com/spf13/cobra v1.7.0 // indirect
+	github.com/spf13/cobra v1.8.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/texttheater/golang-levenshtein v1.0.1 // indirect
 	github.com/tweekmonster/luser v0.0.0-20161003172636-3fa38070dbd7 // indirect
@@ -88,7 +101,7 @@ require (
 	golang.org/x/term v0.21.0 // indirect
 	golang.org/x/text v0.16.0 // indirect
 	golang.org/x/tools v0.22.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240227224415-6ceb2ff114de // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20240311173647-c811ad7063a7 // indirect
 	google.golang.org/grpc v1.63.2 // indirect
 	google.golang.org/protobuf v1.34.0 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect

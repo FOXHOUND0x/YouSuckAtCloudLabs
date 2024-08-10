@@ -50,7 +50,7 @@ func createIAMRole(ctx *pulumi.Context, bucket *s3.Bucket) (*iam.Role, error) {
                     ]
                 }]
             }`, bucketArn, bucketArn), nil
-		}).(pulumi.StringOutput),
+		}).(pulumi.AnyOutput),
 	})
 	if err != nil {
 		return nil, err
